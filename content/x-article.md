@@ -6,7 +6,7 @@ Not because anyone voted for it. EU second-reading rules require an absolute maj
 
 Everyone is sharing panic threads about the EU scanning your WhatsApp. Most of them are wrong, and the truth is worse in a different way.
 
-What actually passed is "Chat Control 1.0": a voluntary scheme that lets providers scan messages and mail for known child sexual abuse material. Voluntary means Gmail, Facebook Messenger, Instagram DMs, Snapchat, Skype and iCloud Mail already opted in. They scan today. They have for years. Your mail provider reads your mail, and that was true before yesterday.
+What actually passed is "Chat Control 1.0": a voluntary scheme that lets providers scan messages and mail for known child sexual abuse material. Voluntary means Gmail, Instagram DMs, Snapchat and Skype opted in years ago. Large webmail providers have automatically scanned message content for years. That was true before yesterday.
 
 What did NOT pass is Chat Control 2.0, the mandatory client-side scanning of everyone's messages including encrypted apps. That one is still stuck in negotiations after collapsing again in June. It comes back in September. That is the real fight. Signal has said it will leave the EU market before it weakens encryption.
 
@@ -18,11 +18,11 @@ First, ignore the theater. A VPN does not protect you from this. Client-side sca
 
 What works is changing whose code runs on your device:
 
-1. Move private conversations to Signal and mail off Gmail to Proton or Tuta. Takes minutes, and it protects you from the scanning happening right now, not hypothetically.
+1. Move private conversations to Signal and mail off Gmail to Proton or Tuta. Takes minutes, and it gets you off the services that chose to scan, not hypothetical future ones.
 2. Bring your three most important group chats with you. An encrypted messenger you use alone is useless.
-3. For anything genuinely sensitive: SimpleX. No phone number, no username, no identifiers. Nothing to attach an order to.
+3. For anything genuinely sensitive: SimpleX. No phone number, no username, no identifiers. No account that ties messages to you.
 
-I put the whole thing on one page: what actually passed with every vote sourced, which apps scan your messages today, what works versus what is theater, and a tracker that updates when any app changes status.
+I put the whole thing on one page: what actually passed with every vote sourced, which apps opt in to scanning, what works versus what is theater, and a tracker that updates when any app changes status.
 
 escapechatcontrol.com
 

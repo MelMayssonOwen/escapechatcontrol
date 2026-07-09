@@ -11,6 +11,10 @@ Mirrors the sheetfolk-storefront Coolify pattern (dockerfile build pack, port 80
    FQDN escapechatcontrol.com + www. Env vars:
    - `RESEND_API_KEY` (existing Opsibyte key works; sending domain not needed until the first alert email)
    - `RESEND_AUDIENCE_ID`
+   - `TRUST_PROXY=1` (behind Coolify's proxy only — enables x-forwarded-for for rate limiting)
+
+Deferred hardening (fine for launch, revisit if the list grows): double opt-in
+confirmation emails (needs verified sending domain), Turnstile on the form.
 5. DNS → Coolify host, TLS via Coolify.
 
 ## Local dev

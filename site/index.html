@@ -9,9 +9,67 @@
 <meta property="og:title" content="314 MEPs voted to kill Chat Control. It passed anyway.">
 <meta property="og:description" content="What the EU vote actually changed, which apps scan your messages today, and how to escape — without the myths.">
 <meta property="og:url" content="https://escapechatcontrol.com/">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:image" content="https://escapechatcontrol.com/og-image.png">
+<meta property="article:published_time" content="2026-07-09">
+<meta property="article:modified_time" content="2026-07-10">
 <meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://escapechatcontrol.com/#organization",
+      "name": "Escape Chat Control",
+      "url": "https://escapechatcontrol.com/",
+      "description": "A nonpartisan, fact-checked guide and living tracker for EU Chat Control.",
+      "sameAs": [
+        "https://github.com/MelMayssonOwen/escapechatcontrol"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://escapechatcontrol.com/#author",
+      "name": "Mel",
+      "url": "https://x.com/melowen",
+      "sameAs": [
+        "https://x.com/melowen"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://escapechatcontrol.com/#website",
+      "url": "https://escapechatcontrol.com/",
+      "name": "Escape Chat Control",
+      "description": "A nonpartisan, fact-checked guide and living tracker for EU Chat Control.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://escapechatcontrol.com/#organization"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://escapechatcontrol.com/#article",
+      "url": "https://escapechatcontrol.com/",
+      "mainEntityOfPage": "https://escapechatcontrol.com/",
+      "headline": "314 MEPs voted to kill Chat Control. It passed anyway.",
+      "description": "A fact-checked guide to what the July 2026 vote actually changed, which apps opt in to scanning your messages, and how to switch to services that refuse.",
+      "image": "https://escapechatcontrol.com/og-image.png",
+      "datePublished": "2026-07-09",
+      "dateModified": "2026-07-10",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://escapechatcontrol.com/#author"
+      },
+      "publisher": {
+        "@id": "https://escapechatcontrol.com/#organization"
+      }
+    }
+  ]
+}
+</script>
 <style>
 :root{
   --paper:#FAFAF7; --ink:#14181D; --muted:#5B6470; --rule:#D8DAD2;
@@ -128,7 +186,7 @@ footer .wrap-wide{display:flex;justify-content:space-between;gap:14px;flex-wrap:
 <header class="dochead">
   <div class="wrap-wide">
     <span><strong>ESCAPE CHAT CONTROL</strong> · escapechatcontrol.com</span>
-    <span class="stamp">STATUS: LIVING DOCUMENT · LAST VERIFIED 2026-07-09</span>
+    <span class="stamp">STATUS: LIVING DOCUMENT · PUBLISHED <time datetime="2026-07-09">2026-07-09</time> · LAST VERIFIED <time datetime="2026-07-10">2026-07-10</time></span>
   </div>
 </header>
 
@@ -151,7 +209,7 @@ footer .wrap-wide{display:flex;justify-content:space-between;gap:14px;flex-wrap:
   <p class="seclabel">Section — the record</p>
   <h2>What actually happened, in 60 seconds</h2>
   <p>Two different things get called “Chat Control.” Most of what you read this week confuses them.</p>
-  <p><strong>What passed on 9 July</strong> is the revival of “Chat Control 1.0” — a <em>voluntary</em> scheme that lets providers scan messages and mail for known child sexual abuse material. Gmail, Facebook Messenger, Instagram DMs, Snapchat, Skype, iCloud Mail and Xbox have used it for years. It lapsed in April 2026 after Parliament rejected it; the Council brought it back, and this week's rejection vote fell 47 short. It is on track to run to <span class="mono">3 April 2028</span>.</p>
+  <p><strong>What passed on 9 July</strong> is the revival of “Chat Control 1.0” — a <em>voluntary</em> scheme that lets providers scan messages and mail for known child sexual abuse material. Google, Meta and Microsoft have used it for years, across Gmail, Facebook Messenger, Instagram DMs, Skype and Outlook. It lapsed in April 2026 after Parliament rejected it; the Council brought it back, and this week's rejection vote fell 47 short. It is on track to run to <span class="mono">3 April 2028</span>.</p>
   <p><strong>What did not pass</strong> is “Chat Control 2.0” — the mandatory client-side scanning of everyone's messages, including encrypted apps, that Signal has said it would leave the EU over. That regulation remains stuck in negotiations, which collapsed again on 29 June. It comes back in <strong>September 2026</strong>.</p>
   <p>Parliament also did something almost nobody reported: it passed an amendment (369 votes, clearing the same threshold the rejection missed) <strong>explicitly excluding end-to-end encrypted services</strong> from the revived scheme's scope.</p>
   <ul class="timeline">
@@ -171,11 +229,13 @@ footer .wrap-wide{display:flex;justify-content:space-between;gap:14px;flex-wrap:
   <div class="tscroll"><table>
     <thead><tr><th>Service</th><th>Status</th><th>Basis</th></tr></thead>
     <tbody>
-      <tr><td>Gmail</td><td><span class="chip scan">OPTS IN</span></td><td>Scanned mail content under the voluntary scheme from 2021 until it lapsed.</td></tr>
-      <tr><td>Instagram DM</td><td><span class="chip scan">OPTS IN</span></td><td>Voluntary scanning participant; not end-to-end encrypted by default.</td></tr>
-      <tr><td>Snapchat</td><td><span class="chip scan">OPTS IN</span></td><td>Voluntary scanning participant; no end-to-end encryption for text.</td></tr>
-      <tr><td>Skype / Xbox</td><td><span class="chip scan">OPTS IN</span></td><td>Microsoft participated for these non-E2EE services.</td></tr>
-      <tr><td>Facebook Messenger</td><td><span class="chip watch">MIXED</span></td><td>Personal chats are E2EE by default since 2023 and outside content scanning; other surfaces have participated.</td></tr>
+      <tr><td>Gmail</td><td><span class="chip scan">OPTS IN</span></td><td>One of the Google services in scope. Google reported hash-matching images and video in EU accounts under the scheme, and says it does not scan text for solicitation.</td></tr>
+      <tr><td>Instagram DM</td><td><span class="chip scan">OPTS IN</span></td><td>Meta runs media-matching on images and video across Instagram Direct and Messenger, on “surfaces that are not end-to-end encrypted”. It actioned about 1.5 million pieces of media in EU threads in 2024.</td></tr>
+      <tr><td>Snapchat</td><td><span class="chip scan">OPTS IN</span></td><td>Snap signed the April 2026 industry pledge to keep taking “voluntary action” against CSAM on its interpersonal communications services. It has never filed a transparency report under the scheme. No end-to-end encryption for text.</td></tr>
+      <tr><td>Skype / Outlook</td><td><span class="chip scan">OPTS IN</span></td><td>Microsoft invoked the derogation and names Skype, Outlook, GroupMe and Teams as its services in scope. It creates digital signatures of images and video. Xbox is not among them.</td></tr>
+      <tr><td>iCloud Mail</td><td><span class="chip scan">SCANS</span></td><td>Apple confirmed in 2021 that it scans incoming and outgoing iCloud Mail attachments for CSAM, and has done since 2019. Mail is not encrypted. Apple has never reported under the scheme — this is its own policy, not the EU’s.</td></tr>
+      <tr><td>Facebook Messenger</td><td><span class="chip watch">MIXED</span></td><td>Personal chats have been E2EE by default since late 2023, and Meta scans only surfaces that are not end-to-end encrypted. It was still reporting media-matching in Messenger threads through 2024.</td></tr>
+      <tr><td>Telegram</td><td><span class="chip watch">NOT E2EE BY DEFAULT</span></td><td>Default chats — including every group and channel — are encrypted to Telegram’s servers, not end to end, so the 9 July carve-out does not reach them. Telegram has never appeared among the providers reporting use of the scheme. Secret Chats are genuine end-to-end encryption, but they are opt-in and one-to-one only.</td></tr>
       <tr><td>WhatsApp</td><td><span class="chip exempt">EXEMPT — E2EE</span></td><td>End-to-end encrypted; covered by the 9 July carve-out. Meta has warned it cannot keep meaningful encryption under a scanning mandate.</td></tr>
       <tr><td>iMessage</td><td><span class="chip exempt">EXEMPT — E2EE</span></td><td>E2EE in transit; note iCloud backups without Advanced Data Protection weaken this.</td></tr>
       <tr><td>Signal</td><td><span class="chip exit">WOULD EXIT EU</span></td><td>President Meredith Whittaker: Signal leaves the EU market before it weakens encryption. Restated through 2026.</td></tr>
@@ -185,7 +245,7 @@ footer .wrap-wide{display:flex;justify-content:space-between;gap:14px;flex-wrap:
       <tr><td>SimpleX Chat</td><td><span class="chip exempt">NO IDENTIFIERS</span></td><td>No phone number, no username, no user IDs — no account that ties messages to you.</td></tr>
     </tbody>
   </table></div>
-  <p class="verified">Every row verified 2026-07-09 against the sources below. A status changes → subscribers get one email.</p>
+  <p class="verified">Every row verified 2026-07-10 against the sources below. A status changes → subscribers get one email.</p>
 </div></section>
 
 <section id="theater"><div class="wrap-wide">
@@ -198,6 +258,7 @@ footer .wrap-wide{display:flex;justify-content:space-between;gap:14px;flex-wrap:
       <tr><td>Leave the services that opt in</td><td class="v-works">WORKS</td><td>Opted-in services scanned content for years under this scheme. Moving off them is the single biggest step.</td></tr>
       <tr><td>Signal</td><td class="v-works">WORKS</td><td>Real E2EE, no scanning participation, and a credible public commitment to exit rather than comply.</td></tr>
       <tr><td>SimpleX Chat</td><td class="v-works">WORKS</td><td>The strongest architecture: no identifiers of any kind, so targeting individual users is technically much harder.</td></tr>
+      <tr><td>Telegram</td><td class="v-partial">PARTIAL</td><td>Not a scanning participant, so it is a real step up from Gmail or Instagram DM. But default chats are not end-to-end encrypted: Telegram holds the keys and stores the messages, so the 9 July carve-out does not protect them. Only Secret Chats fall under it, and they are opt-in and one-to-one only.</td></tr>
       <tr><td>Proton Mail / Tuta</td><td class="v-partial">PARTIAL</td><td>A real upgrade over scanned mail today. Future-proofing rests on their stated willingness to fight, not on legal exemption.</td></tr>
       <tr><td>Threema / Session</td><td class="v-partial">PARTIAL</td><td>Swiss-based helps enforcement-wise; EU law is written to reach any service “offered to EU users.”</td></tr>
       <tr><td>Self-hosted Matrix / XMPP</td><td class="v-partial">PARTIAL</td><td>Personal, non-commercial servers plausibly fall outside the rules — plausibly. Untested. Metadata still leaks between servers.</td></tr>
@@ -240,6 +301,13 @@ footer .wrap-wide{display:flex;justify-content:space-between;gap:14px;flex-wrap:
   <p>Every claim above traces to one of these. If you find an error, <a href="mailto:corrections@escapechatcontrol.com">tell us</a> and it gets fixed with a changelog entry.</p>
   <ol>
     <li><a href="https://www.consilium.europa.eu/en/press/press-releases/2026/07/02/council-moves-to-reinstate-interim-measure-to-combat-child-sexual-abuse-online/">Council of the EU — press release, 2 July 2026</a></li>
+    <li><a href="https://www.europarl.europa.eu/RegData/docs_autres_institutions/commission_europeenne/com/2025/0740/COM_COM(2025)0740_EN.pdf">European Commission — COM(2025) 740 final, implementation of Regulation (EU) 2021/1232: “Google, LinkedIn, Meta, Microsoft and Yubo submitted reports.”</a></li>
+    <li><a href="https://www.europarl.europa.eu/RegData/docs_autres_institutions/commission_europeenne/com/2023/0797/COM_COM(2023)0797_EN.pdf">European Commission — COM(2023) 797 final: “Google, LinkedIn, Meta, Microsoft, and X (former Twitter) submitted reports for 2021 and 2022.”</a></li>
+    <li><a href="https://storage.googleapis.com/transparencyreport/report-downloads/pdf-report-23_2023-1-1_2023-12-31_en_v1.pdf">Google Ireland — transparency report under Regulation (EU) 2021/1232 (Google Chat, Hangouts and Gmail; hash-matching; no text scanning for solicitation)</a></li>
+    <li><a href="https://www.microsoft.com/en/digitalsafety/transparency-reports/jurisdictional-reports">Microsoft — jurisdictional transparency reports: services in scope of the EU CSAM interim regulation (Skype, Outlook, GroupMe, Teams)</a></li>
+    <li><a href="https://transparency.meta.com/sr/eu-csam-derogation-report-2025/">Meta Ireland — EU CSAM derogation report: media-matching “across Messenger and Instagram Direct on surfaces that are not end-to-end encrypted”, ~1.5m items actioned in EU threads in 2024</a></li>
+    <li><a href="https://blogs.microsoft.com/eupolicy/2026/04/03/reaffirming-our-commitment-to-child-safety-in-the-face-of-european-union-inaction/">Google, Meta, Microsoft and Snap — April 2026 joint statement pledging continued voluntary detection</a></li>
+    <li><a href="https://9to5mac.com/2021/08/23/apple-scans-icloud-mail-for-csam/">9to5Mac — Apple confirms it has scanned iCloud Mail for CSAM attachments since 2019</a></li>
     <li><a href="https://www.theregister.com/security/2026/07/09/meps-fail-to-prevent-chat-control-snoopfest-revival/5269379">The Register — vote report, 9 July 2026</a></li>
     <li><a href="https://www.euronews.com/my-europe/2026/07/09/european-parliament-aims-to-exclude-end-to-end-chats-from-message-scanning-regime">Euronews — the E2EE carve-out amendment</a></li>
     <li><a href="https://netzpolitik.org/2026/eu-parlament-freiwillige-chatkontrolle-geht-mit-verfahrenstrick-durch/">netzpolitik.org — the urgency-procedure maneuver</a></li>
@@ -249,6 +317,8 @@ footer .wrap-wide{display:flex;justify-content:space-between;gap:14px;flex-wrap:
     <li><a href="https://therecord.media/signal-calls-on-germany-to-vote-no-chat-control">The Record — Signal's EU exit warning</a></li>
     <li><a href="https://threema.com/en/blog/stop-chat-control">Threema — public position</a></li>
     <li><a href="https://www.techradar.com/computing/cyber-security/we-will-not-stand-by-while-the-eu-destroys-encryption-tuta-mail-ready-to-sue-the-eu-over-chat-control">TechRadar — Tuta's planned lawsuit</a></li>
+    <li><a href="https://telegram.org/faq#q-so-how-do-you-encrypt-data">Telegram FAQ — Cloud Chats (private and group) use client-server encryption; only Secret Chats are end-to-end encrypted</a></li>
+    <li><a href="https://core.telegram.org/api/end-to-end">Telegram protocol docs — “Secret Chats are one-on-one chats” and are device-specific</a></li>
     <li><a href="https://fightchatcontrol.eu/">fightchatcontrol.eu — contact your MEP (advocacy)</a></li>
     <li><a href="https://stopscanningme.eu/en/">EDRi — Stop Scanning Me coalition</a></li>
   </ol>
@@ -257,7 +327,7 @@ footer .wrap-wide{display:flex;justify-content:space-between;gap:14px;flex-wrap:
 
 <footer><div class="wrap-wide">
   <span>Nonpartisan. No ads. No analytics. This page doesn't track you — that would be a strange choice.</span>
-  <span>Built by <a href="https://x.com/melowen" rel="me">Mel</a> · <span class="mono">v2026.07.09</span></span>
+  <span>Built by <a href="https://x.com/melowen" rel="me">Mel</a> · <span class="mono">v2026.07.10</span></span>
 </div></footer>
 
 <script>

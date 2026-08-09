@@ -175,7 +175,12 @@ const server = createServer((req, res) => {
 
   if (req.method !== "GET" && req.method !== "HEAD") return send(res, 405, { error: "method not allowed" });
 
-  const path = url.pathname === "/" ? "/index.html" : url.pathname;
+  // Directory-index resolution: "/" -> "/index.html", and "/es/" (or "/es",
+  // no trailing slash) -> "/es/index.html" for every locale subdirectory.
+  let path = url.pathname;
+  if (path === "/") path = "/index.html";
+  else if (path.endsWith("/")) path = path + "index.html";
+  else if (!FILES.has(path) && FILES.has(path + "/index.html")) path = path + "/index.html";
   const file = FILES.get(path);
   if (!file) {
     res.writeHead(404, { "Content-Type": "text/plain" });

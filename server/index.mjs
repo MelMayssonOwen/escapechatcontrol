@@ -53,6 +53,46 @@ const FILES = new Map();
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
+// Subscribe-endpoint copy, localized. The client sends `locale` (the page's
+// own <html lang>); unknown/missing values fall back to English. Kept small
+// and inline rather than pulling in the site's i18n content module, since
+// this is server runtime code, not generated markup.
+const MESSAGES = {
+  en: {
+    invalidEmail: "That does not look like an email address.",
+    tooMany: "Too many attempts. Wait a minute.",
+    down: "Subscriptions are down right now. Try again later.",
+    failed: "Could not subscribe you. Try again in a moment.",
+  },
+  es: {
+    invalidEmail: "Eso no parece una dirección de correo electrónico.",
+    tooMany: "Demasiados intentos. Espera un minuto.",
+    down: "Las suscripciones no están disponibles ahora mismo. Inténtalo más tarde.",
+    failed: "No hemos podido suscribirte. Inténtalo de nuevo en un momento.",
+  },
+  fr: {
+    invalidEmail: "Cela ne ressemble pas à une adresse e-mail.",
+    tooMany: "Trop de tentatives. Attendez une minute.",
+    down: "Les inscriptions sont indisponibles pour le moment. Réessayez plus tard.",
+    failed: "Impossible de vous inscrire. Réessayez dans un instant.",
+  },
+  it: {
+    invalidEmail: "Non sembra un indirizzo email valido.",
+    tooMany: "Troppi tentativi. Attendi un minuto.",
+    down: "Le iscrizioni non sono disponibili in questo momento. Riprova più tardi.",
+    failed: "Non è stato possibile completare l'iscrizione. Riprova tra poco.",
+  },
+  pt: {
+    invalidEmail: "Isso não parece um endereço de email.",
+    tooMany: "Demasiadas tentativas. Aguarde um minuto.",
+    down: "As subscrições estão indisponíveis neste momento. Tente novamente mais tarde.",
+    failed: "Não foi possível concluir a subscrição. Tente novamente dentro de momentos.",
+  },
+};
+function msg(locale, key) {
+  return (MESSAGES[locale] || MESSAGES.en)[key] || MESSAGES.en[key];
+}
+
 // Per-IP throttle + a global hourly cap: the endpoint creates contacts in a
 // third-party service, so neither one client nor a botnet gets to hammer it.
 const hits = new Map();
@@ -98,20 +138,21 @@ const server = createServer((req, res) => {
     let raw = "";
     req.on("data", (c) => { raw += c; if (raw.length > 4096) req.destroy(); });
     req.on("end", async () => {
-      let email, honeypot;
+      let email, honeypot, locale;
       try {
         const parsed = JSON.parse(raw);
         email = parsed?.email?.trim()?.toLowerCase();
         honeypot = parsed?.website;
+        locale = typeof parsed?.locale === "string" ? parsed.locale : "en";
       } catch { /* fall through */ }
       // Bots fill the hidden field; tell them it worked and do nothing.
       if (honeypot) return send(res, 200, { ok: true });
       if (!email || !EMAIL_RE.test(email) || email.length > 254) {
-        return send(res, 400, { error: "That does not look like an email address." });
+        return send(res, 400, { error: msg(locale, "invalidEmail") });
       }
       if (!resend || !audienceId) {
         console.error("[subscribe] misconfigured: missing RESEND_API_KEY or RESEND_AUDIENCE_ID");
-        return send(res, 500, { error: "Subscriptions are down right now. Try again later." });
+        return send(res, 500, { error: msg(locale, "down") });
       }
       try {
         globalCount++;
@@ -120,13 +161,13 @@ const server = createServer((req, res) => {
         // subscriber is a success from the visitor's point of view.
         if (error && !/already|exists|duplicate/i.test(error.message || "")) {
           console.error("[subscribe] resend error:", error);
-          return send(res, 502, { error: "Could not subscribe you. Try again in a moment." });
+          return send(res, 502, { error: msg(locale, "failed") });
         }
         console.log("[subscribe] ok (+1 contact)");
         return send(res, 200, { ok: true });
       } catch (err) {
         console.error("[subscribe] error:", err);
-        return send(res, 502, { error: "Could not subscribe you. Try again in a moment." });
+        return send(res, 502, { error: msg(locale, "failed") });
       }
     });
     return;

@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Escape Chat Control: saca tus mensajes de la red vigilada</title>
+<meta name="description" content="Una guía verificada sobre la votación de Chat Control de julio de 2026: qué cambió, qué aplicaciones escanean ahora tus mensajes y cómo pasarte a servicios que se niegan a hacerlo.">
+<link rel="canonical" href="https://escapechatcontrol.com/es/">
+<link rel="alternate" hreflang="en" href="https://escapechatcontrol.com/">
+<link rel="alternate" hreflang="es" href="https://escapechatcontrol.com/es/">
+<link rel="alternate" hreflang="fr" href="https://escapechatcontrol.com/fr/">
+<link rel="alternate" hreflang="it" href="https://escapechatcontrol.com/it/">
+<link rel="alternate" hreflang="pt" href="https://escapechatcontrol.com/pt/">
+<link rel="alternate" hreflang="x-default" href="https://escapechatcontrol.com/">
+<meta property="og:title" content="314 eurodiputados votaron para acabar con Chat Control. Aun así, salió adelante.">
+<meta property="og:description" content="Qué cambió realmente la votación de la UE, qué aplicaciones escanean hoy tus mensajes y cómo escapar, sin los mitos.">
+<meta property="og:url" content="https://escapechatcontrol.com/es/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://escapechatcontrol.com/og-image.png">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_PT">
+<meta property="article:published_time" content="2026-07-09">
+<meta property="article:modified_time" content="2026-07-10">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://escapechatcontrol.com/#organization",
+      "name": "Escape Chat Control",
+      "url": "https://escapechatcontrol.com/",
+      "description": "Una guía imparcial y verificada, con seguimiento actualizado, sobre el Chat Control de la UE.",
+      "sameAs": [
+        "https://github.com/MelMayssonOwen/escapechatcontrol"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://escapechatcontrol.com/#author",
+      "name": "Mel",
+      "url": "https://x.com/melowen",
+      "sameAs": [
+        "https://x.com/melowen"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://escapechatcontrol.com/es/#website",
+      "url": "https://escapechatcontrol.com/es/",
+      "name": "Escape Chat Control",
+      "description": "Una guía imparcial y verificada, con seguimiento actualizado, sobre el Chat Control de la UE.",
+      "inLanguage": "es",
+      "publisher": {
+        "@id": "https://escapechatcontrol.com/#organization"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://escapechatcontrol.com/es/#article",
+      "url": "https://escapechatcontrol.com/es/",
+      "mainEntityOfPage": "https://escapechatcontrol.com/es/",
+      "headline": "314 eurodiputados votaron para acabar con Chat Control. Aun así, salió adelante.",
+      "description": "Una guía verificada sobre lo que realmente cambió la votación de julio de 2026, qué aplicaciones se han sumado voluntariamente al escaneo de tus mensajes y cómo pasarte a servicios que se niegan a hacerlo.",
+      "image": "https://escapechatcontrol.com/og-image.png",
+      "datePublished": "2026-07-09",
+      "dateModified": "2026-07-10",
+      "inLanguage": "es",
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://escapechatcontrol.com/#author"
+      },
+      "publisher": {
+        "@id": "https://escapechatcontrol.com/#organization"
+      }
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --paper:#FAFAF7; --ink:#14181D; --muted:#5B6470; --rule:#D8DAD2;
+  --doc-blue:#1B4FA0; --alert:#C63D1D; --safe:#1E7A46; --warn:#8A6D1F;
+  --mono:ui-monospace,"SF Mono","Cascadia Mono",Menlo,Consolas,monospace;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{--paper:#12151A; --ink:#E8E8E2; --muted:#9BA3AD; --rule:#2A2F37; --doc-blue:#6E9FE8; --alert:#E86A47; --safe:#4CAF7A; --warn:#C9A94E;}
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:var(--doc-blue);text-decoration-thickness:1px;text-underline-offset:2px}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--doc-blue);outline-offset:2px}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+.wrap-wide{max-width:960px;margin:0 auto;padding:0 20px}
+
+/* document header */
+.dochead{border-bottom:2px solid var(--ink);padding:14px 0;font-family:var(--mono);font-size:12px;letter-spacing:.04em}
+.dochead .wrap-wide{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.dochead .stamp{color:var(--muted)}
+.dochead strong{font-weight:700}
+
+/* language switcher */
+.langswitch{font-family:var(--mono);font-size:12px;letter-spacing:.02em;display:flex;gap:10px;flex-wrap:wrap}
+.langswitch a{text-decoration:none;border-bottom:1px solid transparent}
+.langswitch a:hover{border-bottom-color:currentColor}
+.langswitch span[aria-current]{font-weight:700;color:var(--ink)}
+
+/* hero */
+.hero{padding:72px 0 56px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--doc-blue);margin-bottom:18px}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.12;letter-spacing:-.01em;max-width:17ch}
+.hero .sub{margin-top:22px;font-size:19px;color:var(--muted);max-width:56ch}
+.hero .sub strong{color:var(--ink)}
+
+/* the roll-call ledger — signature element */
+.ledger{margin-top:44px;border:1px solid var(--ink);padding:22px 24px;max-width:640px}
+.ledger .row{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:13px;flex-wrap:wrap;column-gap:12px}
+.ledger .row + .row{margin-top:6px}
+.ledger .n{font-size:28px;font-weight:700}
+.ledger .n.alert{color:var(--alert)}
+.bar{position:relative;height:14px;background:transparent;border:1px solid var(--ink);margin:16px 0 8px}
+.bar .fill{position:absolute;inset:0;width:calc(314/720*100%);background:var(--ink);animation:tally 1.4s cubic-bezier(.2,.7,.2,1)}
+@keyframes tally{from{width:0}}
+.bar .threshold{position:absolute;top:-7px;bottom:-7px;left:calc(361/720*100%);width:0;border-left:2px dashed var(--alert)}
+.bar .threshold::after{content:"361 needed";position:absolute;top:-20px;left:6px;font-family:var(--mono);font-size:11px;color:var(--alert);white-space:nowrap}
+.ledger .gap{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.ledger .gap strong{color:var(--alert)}
+@media (prefers-reduced-motion: reduce){.bar .fill{animation:none}}
+
+/* sections */
+section{padding:56px 0;border-bottom:1px solid var(--rule)}
+.seclabel{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+h2{font-family:var(--serif);font-size:clamp(24px,3.6vw,32px);line-height:1.2;margin-bottom:20px;max-width:24ch}
+p + p{margin-top:14px}
+.note{font-size:14px;color:var(--muted);border-left:3px solid var(--rule);padding-left:14px;margin-top:18px}
+.mono{font-family:var(--mono)}
+
+/* timeline */
+.timeline{list-style:none;margin-top:8px}
+.timeline li{display:grid;grid-template-columns:118px 1fr;gap:16px;padding:13px 0;border-top:1px solid var(--rule)}
+.timeline .d{font-family:var(--mono);font-size:13px;color:var(--doc-blue);padding-top:2px;white-space:nowrap}
+.timeline .d.next{color:var(--alert)}
+.timeline p{font-size:15.5px}
+@media(max-width:540px){.timeline li{grid-template-columns:1fr;gap:2px}}
+
+/* status table */
+table{width:100%;border-collapse:collapse;font-size:15px;margin-top:10px}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;text-align:left;color:var(--muted);padding:10px 12px 8px;border-bottom:2px solid var(--ink)}
+td{padding:11px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+td:first-child{font-weight:600;white-space:nowrap}
+.chip{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.05em;padding:3px 8px;border:1px solid;white-space:nowrap}
+.chip.scan{color:var(--alert);border-color:var(--alert)}
+.chip.exempt{color:var(--safe);border-color:var(--safe)}
+.chip.exit{color:var(--doc-blue);border-color:var(--doc-blue)}
+.chip.watch{color:var(--warn);border-color:var(--warn)}
+.tscroll{overflow-x:auto}
+.verified{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:10px}
+
+/* works vs theater */
+.verdict td:nth-child(2){font-family:var(--mono);font-size:12px;white-space:nowrap}
+.v-works{color:var(--safe);font-weight:700}
+.v-partial{color:var(--warn);font-weight:700}
+.v-theater{color:var(--alert);font-weight:700}
+
+/* ladder */
+.ladder{list-style:none;counter-reset:step;margin-top:6px}
+.ladder li{counter-increment:step;display:grid;grid-template-columns:56px 1fr;gap:18px;padding:20px 0;border-top:1px solid var(--rule)}
+.ladder li::before{content:counter(step,decimal-leading-zero);font-family:var(--mono);font-size:24px;font-weight:700;color:var(--doc-blue)}
+.ladder h3{font-size:17px;margin-bottom:4px}
+.ladder .effort{font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:8px}
+.ladder p{font-size:15.5px}
+@media(max-width:540px){.ladder li{grid-template-columns:36px 1fr;gap:12px}.ladder li::before{font-size:18px}}
+
+/* subscribe */
+.subscribe{background:var(--ink);color:var(--paper)}
+.subscribe h2,.subscribe .seclabel{color:inherit}
+.subscribe .seclabel{color:color-mix(in srgb,var(--paper) 60%,transparent)}
+.subscribe p{max-width:52ch}
+.subform{display:flex;gap:10px;margin-top:24px;max-width:480px;flex-wrap:wrap}
+.subform input{flex:1;min-width:220px;padding:12px 14px;font-size:16px;font-family:var(--mono);background:transparent;border:1px solid color-mix(in srgb,var(--paper) 50%,transparent);color:inherit}
+.subform input::placeholder{color:color-mix(in srgb,var(--paper) 45%,transparent)}
+.subform button{padding:12px 22px;font-size:15px;font-weight:700;background:var(--paper);color:var(--ink);border:none;cursor:pointer}
+.subform button:hover{opacity:.9}
+.submsg{font-family:var(--mono);font-size:13px;margin-top:12px;min-height:1.4em}
+
+/* sources & footer */
+.sources ol{padding-left:22px;font-size:14px;color:var(--muted)}
+.sources li{margin-top:6px}
+footer{padding:32px 0 48px;font-size:14px;color:var(--muted)}
+footer .wrap-wide{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<header class="dochead">
+  <div class="wrap-wide">
+    <span><strong>ESCAPE CHAT CONTROL</strong> · escapechatcontrol.com</span>
+    <nav class="langswitch" aria-label="Language / Langue / Idioma / Lingua"><a href="/" lang="en" hreflang="en">English</a>
+<span aria-current="page" lang="es">Español</span>
+<a href="/fr/" lang="fr" hreflang="fr">Français</a>
+<a href="/it/" lang="it" hreflang="it">Italiano</a>
+<a href="/pt/" lang="pt" hreflang="pt">Português</a></nav>
+    <span class="stamp">ESTADO: DOCUMENTO VIVO · PUBLICADO <time datetime="2026-07-09">2026-07-09</time> · ÚLTIMA VERIFICACIÓN <time datetime="2026-07-10">2026-07-10</time></span>
+  </div>
+</header>
+
+<main>
+<div class="hero"><div class="wrap-wide">
+  <p class="eyebrow">Comunicaciones interpersonales de la UE · Reglamento (UE) 2021/1232 · segunda lectura, 9 de julio de 2026</p>
+  <h1>314 eurodiputados votaron para acabar con Chat Control. Aun así, salió adelante.</h1>
+  <p class="sub">Una pluralidad del Parlamento Europeo votó para rechazar el escaneo de mensajes. Según las normas de segunda lectura de la UE, eso no fue suficiente. Esto es <strong>lo que realmente cambió</strong>, <strong>qué aplicaciones se han sumado al escaneo de tus mensajes</strong> y <strong>cómo pasarte a servicios que se niegan a hacerlo</strong> — sin los mitos que circulan.</p>
+
+  <div class="ledger" role="img" aria-label="Votación nominal: 314 votos a favor del rechazo, 276 a favor de mantenerlo. El rechazo requería 361 de los 720 miembros. La moción falló por 47 votos.">
+    <div class="row"><span>MOCIÓN DE RECHAZO — VOTACIÓN NOMINAL</span><span>PLENO · ESTRASBURGO</span></div>
+    <div class="row"><span class="n alert">314</span><span>votos para rechazar el escaneo</span></div>
+    <div class="bar"><div class="fill"></div><div class="threshold"></div></div>
+    <div class="row"><span class="n">276</span><span>votos para mantenerlo</span></div>
+    <p class="gap">El rechazo requería la mayoría absoluta de los 720 miembros. <strong>A la moción le faltaron 47 votos.</strong> Las ausencias contaron a favor de la ley.</p>
+  </div>
+</div></div>
+
+<section id="what-happened"><div class="wrap">
+  <p class="seclabel">Sección — los hechos</p>
+  <h2>Qué pasó realmente, en 60 segundos</h2>
+  <p>Dos cosas distintas reciben el nombre de "Chat Control". La mayor parte de lo que se ha leído esta semana las confunde.</p>
+  <p><strong>Lo que se aprobó el 9 de julio</strong> es la reactivación de "Chat Control 1.0", un régimen <em>voluntario</em> que permite a los proveedores escanear mensajes y correos en busca de material conocido de abuso sexual infantil. Google, Meta y Microsoft lo han usado durante años, en Gmail, Facebook Messenger, Instagram DM, Skype y Outlook. Expiró en abril de 2026 tras el rechazo del Parlamento; el Consejo lo reinstauró, y la votación de rechazo de esta semana se quedó a 47 votos. Está previsto que se mantenga vigente hasta el <span class="mono">3 de abril de 2028</span>.</p>
+  <p><strong>Lo que no salió adelante</strong> es "Chat Control 2.0", el escaneo obligatorio en el dispositivo de los mensajes de todo el mundo, incluidas las aplicaciones cifradas, por el que Signal ha dicho que abandonaría la UE. Ese reglamento sigue estancado en las negociaciones, que volvieron a romperse el 29 de junio. Regresa en <strong>septiembre de 2026</strong>.</p>
+  <p>El Parlamento también hizo algo que casi nadie recogió: aprobó una enmienda (369 votos, superando el mismo umbral que no alcanzó el rechazo) que <strong>excluye explícitamente a los servicios cifrados de extremo a extremo</strong> del ámbito del régimen reactivado.</p>
+  <ul class="timeline">
+      <li><span class="d">26 MAR 2026</span><p>El Parlamento vota en contra de prorrogar el régimen de escaneo. Expira a principios de abril.</p></li>
+      <li><span class="d">02 JUL 2026</span><p>El Consejo de la UE propone reinstaurarlo hasta abril de 2028.</p></li>
+      <li><span class="d">07 JUL 2026</span><p>Se aprueba un procedimiento de urgencia (artículo 170) por 331 a 304, que obliga a una votación exprés en el último día de sesión antes del receso de verano — la maniobra que los críticos consideran el verdadero truco procedimental.</p></li>
+      <li><span class="d">09 JUL 2026</span><p>La moción de rechazo obtiene 314 de los 361 votos necesarios. El régimen sobrevive. La enmienda que excluye el cifrado E2EE se aprueba con 369 votos.</p></li>
+      <li><span class="d next">SEP 2026</span><p>Se reanudan las negociaciones sobre la versión obligatoria — Chat Control 2.0. Esta es la batalla que decidirá si las aplicaciones cifradas acaban siendo escaneadas.</p></li>
+  </ul>
+  <p class="note">Queda un paso procedimental: como el Parlamento modificó el texto, este vuelve al Consejo, que puede aceptar las enmiendas o forzar nuevas negociaciones. En cualquier caso, el régimen de escaneo voluntario ya está en marcha.</p>
+</div></section>
+
+<section id="who-scans"><div class="wrap-wide">
+  <p class="seclabel">Sección — el seguimiento</p>
+  <h2>¿Quién escanea y quién se niega?</h2>
+  <div class="wrap" style="padding:0;margin:0 0 6px"><p>El escaneo bajo este régimen es <strong>voluntario: estos proveedores lo eligieron</strong>, y lo aplicaron durante años antes de que expirara en abril. Los estados reflejan el historial de participación de cada servicio y sus compromisos públicos — se actualizan según cambian.</p></div>
+  <div class="tscroll"><table>
+    <thead><tr><th>Servicio</th><th>Estado</th><th>Fundamento</th></tr></thead>
+    <tbody>
+      <tr><td>Gmail</td><td><span class="chip scan">SE SUMA</span></td><td>Uno de los servicios de Google incluidos en el ámbito de aplicación. Google declaró que compara mediante hash imágenes y vídeos en cuentas de la UE bajo este régimen, y afirma que no escanea texto en busca de captación de menores.</td></tr>
+      <tr><td>Instagram DM</td><td><span class="chip scan">SE SUMA</span></td><td>Meta aplica comparación de contenido multimedia en imágenes y vídeos en Instagram Direct y Messenger, en "superficies que no están cifradas de extremo a extremo". En 2024 actuó sobre unos 1,5 millones de archivos multimedia en conversaciones de la UE.</td></tr>
+      <tr><td>Snapchat</td><td><span class="chip scan">SE SUMA</span></td><td>Snap firmó el compromiso sectorial de abril de 2026 para seguir tomando "medidas voluntarias" contra el CSAM en sus servicios de comunicación interpersonal. Nunca ha presentado un informe de transparencia bajo este régimen. No cuenta con cifrado de extremo a extremo para texto.</td></tr>
+      <tr><td>Skype / Outlook</td><td><span class="chip scan">SE SUMA</span></td><td>Microsoft se acogió a la excepción y cita a Skype, Outlook, GroupMe y Teams como sus servicios incluidos. Genera firmas digitales de imágenes y vídeos. Xbox no figura entre ellos.</td></tr>
+      <tr><td>iCloud Mail</td><td><span class="chip scan">ESCANEA</span></td><td>Apple confirmó en 2021 que escanea los archivos adjuntos entrantes y salientes de iCloud Mail en busca de CSAM, y lo hace desde 2019. El correo no está cifrado. Apple nunca ha informado bajo este régimen — es una política propia, no de la UE.</td></tr>
+      <tr><td>Facebook Messenger</td><td><span class="chip watch">MIXTO</span></td><td>Los chats personales tienen cifrado E2EE por defecto desde finales de 2023, y Meta solo escanea superficies que no están cifradas de extremo a extremo. Seguía informando de comparación de contenido multimedia en conversaciones de Messenger hasta 2024.</td></tr>
+      <tr><td>Telegram</td><td><span class="chip watch">SIN E2EE POR DEFECTO</span></td><td>Los chats por defecto — incluidos todos los grupos y canales — están cifrados hacia los servidores de Telegram, no de extremo a extremo, por lo que la exclusión del 9 de julio no los alcanza. Telegram nunca ha figurado entre los proveedores que informan del uso de este régimen. Los Chats Secretos sí tienen cifrado de extremo a extremo genuino, pero son opcionales y solo funcionan uno a uno.</td></tr>
+      <tr><td>WhatsApp</td><td><span class="chip exempt">EXENTO — E2EE</span></td><td>Cifrado de extremo a extremo; cubierto por la exclusión del 9 de julio. Meta ha advertido de que no puede mantener un cifrado significativo bajo un mandato de escaneo.</td></tr>
+      <tr><td>iMessage</td><td><span class="chip exempt">EXENTO — E2EE</span></td><td>E2EE en tránsito; las copias de seguridad de iCloud sin Protección Avanzada de Datos debilitan esta protección.</td></tr>
+      <tr><td>Signal</td><td><span class="chip exit">SALDRÍA DE LA UE</span></td><td>Su presidenta, Meredith Whittaker: Signal abandonará el mercado de la UE antes que debilitar el cifrado. Reafirmado a lo largo de 2026.</td></tr>
+      <tr><td>Threema</td><td><span class="chip exit">RESISTIRÍA</span></td><td>Suiza; califica los planes de incompatibles con sus convicciones, con "todas las opciones" bajo estudio.</td></tr>
+      <tr><td>Tuta Mail</td><td><span class="chip exit">DEMANDANDO A LA UE</span></td><td>Alemana, E2EE; prepara públicamente acciones legales contra Chat Control.</td></tr>
+      <tr><td>Proton Mail</td><td><span class="chip watch">SE OPONE</span></td><td>Suiza, E2EE, hace campaña en contra; no se ha encontrado un compromiso de salida.</td></tr>
+      <tr><td>SimpleX Chat</td><td><span class="chip exempt">SIN IDENTIFICADORES</span></td><td>Sin número de teléfono, sin nombre de usuario, sin identificadores de usuario — ninguna cuenta que vincule los mensajes contigo.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="verified">Cada fila verificada el 2026-07-10 con las fuentes indicadas más abajo. Si un estado cambia → los suscriptores reciben un correo.</p>
+</div></section>
+
+<section id="theater"><div class="wrap-wide">
+  <p class="seclabel">Sección — la parte honesta</p>
+  <h2>Qué funciona y qué es puro teatro</h2>
+  <div class="wrap" style="padding:0;margin:0 0 6px"><p>El escaneo en el dispositivo es código <strong>dentro de la propia aplicación del proveedor</strong>, que se ejecuta <strong>antes</strong> de que tu mensaje se cifre. Cualquier medida que solo cambie lo que ocurre con tu tráfico después de salir de la aplicación no puede ayudar, por construcción. La mitad de los consejos que circulan no superan esta prueba.</p></div>
+  <div class="tscroll"><table class="verdict">
+    <thead><tr><th>Medida</th><th>Veredicto</th><th>Por qué</th></tr></thead>
+    <tbody>
+      <tr><td>Abandona los servicios que se suman al escaneo</td><td class="v-works">FUNCIONA</td><td>Los servicios que se suman han escaneado contenido durante años bajo este régimen. Dejarlos es, con diferencia, el paso más importante.</td></tr>
+      <tr><td>Signal</td><td class="v-works">FUNCIONA</td><td>E2EE real, sin participación en el escaneo, y un compromiso público creíble de marcharse antes que cumplir.</td></tr>
+      <tr><td>SimpleX Chat</td><td class="v-works">FUNCIONA</td><td>La arquitectura más sólida: no hay identificadores de ningún tipo, por lo que dirigirse a usuarios concretos es técnicamente mucho más difícil.</td></tr>
+      <tr><td>Telegram</td><td class="v-partial">PARCIAL</td><td>No participa en el escaneo, así que supone una mejora real frente a Gmail o Instagram DM. Pero los chats por defecto no están cifrados de extremo a extremo: Telegram guarda las claves y almacena los mensajes, por lo que la exclusión del 9 de julio no los protege. Solo los Chats Secretos entran en ella, y son opcionales y solo uno a uno.</td></tr>
+      <tr><td>Proton Mail / Tuta</td><td class="v-partial">PARCIAL</td><td>Una mejora real frente al correo escaneado actual. Su resistencia futura depende de su voluntad declarada de pelear, no de una exención legal.</td></tr>
+      <tr><td>Threema / Session</td><td class="v-partial">PARCIAL</td><td>Tener sede en Suiza ayuda de cara a la aplicación de la ley; la normativa de la UE está redactada para alcanzar a cualquier servicio "ofrecido a usuarios de la UE".</td></tr>
+      <tr><td>Matrix / XMPP autoalojado</td><td class="v-partial">PARCIAL</td><td>Los servidores personales y no comerciales podrían quedar fuera de las normas — en teoría. Sin comprobar en la práctica. Los metadatos siguen filtrándose entre servidores.</td></tr>
+      <tr><td>VPNs</td><td class="v-theater">TEATRO</td><td>El escaneo ocurre en tu dispositivo antes del cifrado. Una VPN nunca ve el contenido que se escanea. Útil para otras cosas; inútil para esto.</td></tr>
+      <tr><td>Tor</td><td class="v-theater">TEATRO</td><td>El mismo problema de capa. El anonimato de red no elimina el código de escaneo de una aplicación.</td></tr>
+      <tr><td>Instalar tus apps por sideloading</td><td class="v-theater">TEATRO</td><td>Las órdenes vinculan al proveedor, no a la tienda de aplicaciones. Un WhatsApp instalado por sideloading es el mismo código.</td></tr>
+      <tr><td>GrapheneOS / Android sin Google</td><td class="v-partial">OTRA AMENAZA</td><td>Realmente valioso frente a la telemetría a nivel de sistema operativo. No elimina el código de escaneo de una aplicación que cumple la normativa. Hazlo por el motivo correcto.</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<section id="ladder"><div class="wrap">
+  <p class="seclabel">Sección — la escalera de escape</p>
+  <h2>Cinco pasos, el más fácil primero</h2>
+  <ol class="ladder">
+    <li><div><h3>Deja de alimentar a los servicios que se suman</h3><p class="effort">Minutos · gratis</p><p>Mueve tus conversaciones privadas a <a href="https://signal.org">Signal</a> y tu correo privado a <a href="https://proton.me">Proton</a> o <a href="https://tuta.com">Tuta</a>. Gmail, Instagram DM y Snapchat han participado en el escaneo de contenido durante años — este paso importa al margen de cualquier votación futura.</p></div></li>
+    <li><div><h3>Llévate a tu gente contigo</h3><p class="effort">Una tarde · gratis</p><p>Una app de mensajería cifrada que uses tú solo no sirve de nada. Mueve tus tres chats de grupo más importantes. Para cualquier cosa realmente sensible, usa <a href="https://simplex.chat">SimpleX</a> — sin número de teléfono, sin nombre de usuario, sin cuenta vinculada a ti.</p></div></li>
+    <li><div><h3>Reduce la vigilancia que ya llevas encima</h3><p class="effort">Un fin de semana · un Pixel compatible</p><p><a href="https://grapheneos.org">GrapheneOS</a> elimina la capa de telemetría de Google. Que quede claro: esto no vence el escaneo dentro de las apps — elimina una capa mayor, ya activa, que está por debajo.</p></div></li>
+    <li><div><h3>Practica disciplina con los metadatos</h3><p class="effort">Continuo · gratis</p><p>Con quién hablas y cuándo se filtra incluso desde apps cifradas. Separa identidades según el contexto. Verifica los números de seguridad en persona para cualquier contacto sensible. Trata el acceso a cualquier app gestionada de forma centralizada como algo revocable.</p></div></li>
+    <li><div><h3>Gestiona tu propia infraestructura</h3><p class="effort">Semanas · conocimientos de administración de sistemas</p><p>Un servidor Matrix o XMPP autoalojado para un pequeño círculo de confianza es el único peldaño que no depende de la promesa de resistencia de ninguna empresa. Te conviertes tú en el proveedor — posiblemente fuera del ámbito comercial de la normativa, aunque esa interpretación no se ha puesto a prueba.</p></div></li>
+  </ol>
+</div></section>
+
+<section class="subscribe" id="subscribe"><div class="wrap">
+  <p class="seclabel">Sección — septiembre</p>
+  <h2>La verdadera batalla es en septiembre.</h2>
+  <p>Chat Control 2.0 — la versión obligatoria, la que alcanza a las apps cifradas — vuelve a negociarse en septiembre de 2026. Un correo cuando eso avance, y cuando cambie el estado de cualquier app en el seguimiento. Nada más, nunca.</p>
+  <form class="subform" id="subform" data-locale="es">
+    <label for="email" style="position:absolute;left:-9999px">Correo electrónico</label>
+    <input type="email" id="email" name="email" placeholder="tu@ejemplo.com" required autocomplete="email">
+    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:1px;width:1px">
+    <button type="submit">Recibir la alerta</button>
+  </form>
+  <p class="submsg" id="submsg" role="status" aria-live="polite"></p>
+</div></section>
+
+<section class="sources" id="sources"><div class="wrap">
+  <p class="seclabel">Sección — las pruebas</p>
+  <h2>Fuentes</h2>
+  <p>Cada afirmación anterior remite a una de estas fuentes. Si encuentras un error, <a href="mailto:corrections@escapechatcontrol.com">avísanos</a> y lo corregiremos con una entrada en el registro de cambios.</p>
+  <ol>
+    <li><a href="https://www.consilium.europa.eu/en/press/press-releases/2026/07/02/council-moves-to-reinstate-interim-measure-to-combat-child-sexual-abuse-online/">Consejo de la UE — comunicado de prensa, 2 de julio de 2026</a></li>
+    <li><a href="https://www.europarl.europa.eu/RegData/docs_autres_institutions/commission_europeenne/com/2025/0740/COM_COM(2025)0740_EN.pdf">Comisión Europea — COM(2025) 740 final, aplicación del Reglamento (UE) 2021/1232: "Google, LinkedIn, Meta, Microsoft y Yubo presentaron informes."</a></li>
+    <li><a href="https://www.europarl.europa.eu/RegData/docs_autres_institutions/commission_europeenne/com/2023/0797/COM_COM(2023)0797_EN.pdf">Comisión Europea — COM(2023) 797 final: "Google, LinkedIn, Meta, Microsoft y X (antes Twitter) presentaron informes correspondientes a 2021 y 2022."</a></li>
+    <li><a href="https://storage.googleapis.com/transparencyreport/report-downloads/pdf-report-23_2023-1-1_2023-12-31_en_v1.pdf">Google Ireland — informe de transparencia conforme al Reglamento (UE) 2021/1232 (Google Chat, Hangouts y Gmail; comparación mediante hash; sin escaneo de texto para detectar captación)</a></li>
+    <li><a href="https://www.microsoft.com/en/digitalsafety/transparency-reports/jurisdictional-reports">Microsoft — informes de transparencia por jurisdicción: servicios incluidos en el reglamento provisional de la UE sobre CSAM (Skype, Outlook, GroupMe, Teams)</a></li>
+    <li><a href="https://transparency.meta.com/sr/eu-csam-derogation-report-2025/">Meta Ireland — informe sobre la excepción CSAM en la UE: comparación de contenido multimedia "en Messenger e Instagram Direct, en superficies que no están cifradas de extremo a extremo", ~1,5 millones de archivos con actuación en conversaciones de la UE en 2024</a></li>
+    <li><a href="https://blogs.microsoft.com/eupolicy/2026/04/03/reaffirming-our-commitment-to-child-safety-in-the-face-of-european-union-inaction/">Google, Meta, Microsoft y Snap — declaración conjunta de abril de 2026 con el compromiso de continuar la detección voluntaria</a></li>
+    <li><a href="https://9to5mac.com/2021/08/23/apple-scans-icloud-mail-for-csam/">9to5Mac — Apple confirma que escanea los adjuntos de iCloud Mail en busca de CSAM desde 2019</a></li>
+    <li><a href="https://www.theregister.com/security/2026/07/09/meps-fail-to-prevent-chat-control-snoopfest-revival/5269379">The Register — crónica de la votación, 9 de julio de 2026</a></li>
+    <li><a href="https://www.euronews.com/my-europe/2026/07/09/european-parliament-aims-to-exclude-end-to-end-chats-from-message-scanning-regime">Euronews — la enmienda de exclusión del cifrado E2EE</a></li>
+    <li><a href="https://netzpolitik.org/2026/eu-parlament-freiwillige-chatkontrolle-geht-mit-verfahrenstrick-durch/">netzpolitik.org — la maniobra del procedimiento de urgencia</a></li>
+    <li><a href="https://www.greens-efa.eu/en/article/press/chatcontrol-meps-agree-to-controversial-vote-by-urgency-procedure">Verdes/ALE — votación de urgencia del artículo 170, 7 de julio de 2026</a></li>
+    <li><a href="https://www.patrick-breyer.de/en/posts/chat-control/">Patrick Breyer — dosier sobre Chat Control</a></li>
+    <li><a href="https://www.eff.org/deeplinks/2026/04/eu-parliament-blocks-mass-scanning-our-chats-whats-next">EFF — contexto sobre el rechazo de abril de 2026</a></li>
+    <li><a href="https://therecord.media/signal-calls-on-germany-to-vote-no-chat-control">The Record — advertencia de Signal sobre su salida de la UE</a></li>
+    <li><a href="https://threema.com/en/blog/stop-chat-control">Threema — posición pública</a></li>
+    <li><a href="https://www.techradar.com/computing/cyber-security/we-will-not-stand-by-while-the-eu-destroys-encryption-tuta-mail-ready-to-sue-the-eu-over-chat-control">TechRadar — la demanda que prepara Tuta</a></li>
+    <li><a href="https://telegram.org/faq#q-so-how-do-you-encrypt-data">FAQ de Telegram — los Chats en la Nube (privados y de grupo) usan cifrado cliente-servidor; solo los Chats Secretos están cifrados de extremo a extremo</a></li>
+    <li><a href="https://core.telegram.org/api/end-to-end">Documentación del protocolo de Telegram — "los Chats Secretos son chats uno a uno" y son específicos de cada dispositivo</a></li>
+    <li><a href="https://fightchatcontrol.eu/">fightchatcontrol.eu — contacta con tu eurodiputado (activismo)</a></li>
+    <li><a href="https://stopscanningme.eu/en/">EDRi — coalición Stop Scanning Me</a></li>
+  </ol>
+</div></section>
+</main>
+
+<footer><div class="wrap-wide">
+  <span>Imparcial. Sin publicidad. Sin analítica. Esta página no te rastrea — sería una elección extraña.</span>
+  <span>Creado por <a href="https://x.com/melowen" rel="me">Mel</a> · <span class="mono">v2026.07.10</span></span>
+</div></footer>
+
+<script>
+(function(){
+  var form=document.getElementById('subform');
+  var msg=document.getElementById('submsg');
+  var loc=form.getAttribute('data-locale')||'en';
+  var MSG={"subscribing":"Suscribiendo…","done":"Listo. Te escribiremos cuando algo cambie — y no antes.","generic":"Eso no ha funcionado. Comprueba la dirección e inténtalo de nuevo.","network":"Error de red. Inténtalo de nuevo en un momento."};
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var email=document.getElementById('email').value.trim();
+    var hp=document.getElementById('website').value;
+    msg.textContent=MSG.subscribing;
+    fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,website:hp,locale:loc})})
+      .then(function(r){return r.json().catch(function(){return{};}).then(function(b){return{ok:r.ok,body:b};});})
+      .then(function(res){
+        if(res.ok){msg.textContent=MSG.done;form.reset();}
+        else{msg.textContent=(res.body&&res.body.error)||MSG.generic;}
+      })
+      .catch(function(){msg.textContent=MSG.network;});
+  });
+})();
+</script>
+</body>
+</html>

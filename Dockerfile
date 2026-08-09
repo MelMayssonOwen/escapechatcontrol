@@ -5,6 +5,7 @@ RUN npm install --omit=dev
 COPY scripts ./scripts
 COPY server ./server
 COPY site ./site
+COPY content ./content
 RUN npm run build
 EXPOSE 80
 CMD ["node", "server/index.mjs"]

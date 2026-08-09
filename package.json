@@ -4,8 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "npm run typecheck && node scripts/validate-geo.mjs",
+    "build": "npm run typecheck && node scripts/build-site.mjs && node scripts/validate-geo.mjs",
     "typecheck": "node --check server/index.mjs",
+    "build-site": "node scripts/build-site.mjs",
     "start": "node server/index.mjs",
     "dev": "PORT=8787 node server/index.mjs"
   },

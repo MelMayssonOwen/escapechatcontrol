@@ -130,6 +130,7 @@ ${altLocaleTags}
 ${renderJsonLd(locale, c)}
 </script>
 <style>${PAGE_CSS}</style>
+<script defer src="/stats/script.js" data-website-id="ff4fc1c2-2a81-4907-aee1-2d36c582cbbe" data-host-url="https://escapechatcontrol.com/stats"></script>
 </head>
 <body>
 
@@ -246,7 +247,10 @@ ${sourceItems}
     fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,website:hp,locale:loc})})
       .then(function(r){return r.json().catch(function(){return{};}).then(function(b){return{ok:r.ok,body:b};});})
       .then(function(res){
-        if(res.ok){msg.textContent=MSG.done;form.reset();}
+        if(res.ok){
+          msg.textContent=MSG.done;form.reset();
+          try{if(window.umami&&typeof window.umami.track==='function'){window.umami.track('lead_submitted',{form:'subscribe',location:window.location.pathname});}}catch(e){}
+        }
         else{msg.textContent=(res.body&&res.body.error)||MSG.generic;}
       })
       .catch(function(){msg.textContent=MSG.network;});

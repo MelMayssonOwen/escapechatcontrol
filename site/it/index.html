@@ -197,6 +197,7 @@ td:first-child{font-weight:600;white-space:nowrap}
 footer{padding:32px 0 48px;font-size:14px;color:var(--muted)}
 footer .wrap-wide{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 </style>
+<script defer src="/stats/script.js" data-website-id="ff4fc1c2-2a81-4907-aee1-2d36c582cbbe" data-host-url="https://escapechatcontrol.com/stats"></script>
 </head>
 <body>
 
@@ -296,9 +297,9 @@ footer .wrap-wide{display:flex;justify-content:space-between;gap:14px;flex-wrap:
   <p class="seclabel">Sezione — la scala di fuga</p>
   <h2>Cinque passi, dal più semplice</h2>
   <ol class="ladder">
-    <li><div><h3>Smetti di alimentare i servizi che aderiscono</h3><p class="effort">Minuti · gratis</p><p>Sposta le conversazioni private su <a href="https://signal.org">Signal</a> e la posta privata su <a href="https://proton.me">Proton</a> o <a href="https://tuta.com">Tuta</a>. Gmail, Instagram DM e Snapchat hanno partecipato alla scansione dei contenuti per anni — questo passo conta a prescindere da qualsiasi voto futuro.</p></div></li>
-    <li><div><h3>Porta con te le persone con cui parli</h3><p class="effort">Un pomeriggio · gratis</p><p>Una messaggeria cifrata che usi da solo è inutile. Sposta le tue tre chat di gruppo più importanti. Per tutto ciò che è davvero sensibile, usa <a href="https://simplex.chat">SimpleX</a> — nessun numero di telefono, nessun nome utente, nessun account collegato a te.</p></div></li>
-    <li><div><h3>Riduci la sorveglianza che porti già con te</h3><p class="effort">Un weekend · un Pixel supportato</p><p><a href="https://grapheneos.org">GrapheneOS</a> rimuove il livello di telemetria di Google. Sii lucido: questo non sconfigge la scansione dentro le app — rimuove un livello più ampio e già attivo che sta sotto.</p></div></li>
+    <li><div><h3>Smetti di alimentare i servizi che aderiscono</h3><p class="effort">Minuti · gratis</p><p>Sposta le conversazioni private su <a href="https://signal.org" data-umami-event="cta_click" data-umami-event-cta="switch-signal" data-umami-event-location="#ladder">Signal</a> e la posta privata su <a href="https://proton.me" data-umami-event="cta_click" data-umami-event-cta="switch-proton" data-umami-event-location="#ladder">Proton</a> o <a href="https://tuta.com" data-umami-event="cta_click" data-umami-event-cta="switch-tuta" data-umami-event-location="#ladder">Tuta</a>. Gmail, Instagram DM e Snapchat hanno partecipato alla scansione dei contenuti per anni — questo passo conta a prescindere da qualsiasi voto futuro.</p></div></li>
+    <li><div><h3>Porta con te le persone con cui parli</h3><p class="effort">Un pomeriggio · gratis</p><p>Una messaggeria cifrata che usi da solo è inutile. Sposta le tue tre chat di gruppo più importanti. Per tutto ciò che è davvero sensibile, usa <a href="https://simplex.chat" data-umami-event="cta_click" data-umami-event-cta="switch-simplex" data-umami-event-location="#ladder">SimpleX</a> — nessun numero di telefono, nessun nome utente, nessun account collegato a te.</p></div></li>
+    <li><div><h3>Riduci la sorveglianza che porti già con te</h3><p class="effort">Un weekend · un Pixel supportato</p><p><a href="https://grapheneos.org" data-umami-event="cta_click" data-umami-event-cta="switch-grapheneos" data-umami-event-location="#ladder">GrapheneOS</a> rimuove il livello di telemetria di Google. Sii lucido: questo non sconfigge la scansione dentro le app — rimuove un livello più ampio e già attivo che sta sotto.</p></div></li>
     <li><div><h3>Applica disciplina sui metadati</h3><p class="effort">Continuo · gratis</p><p>Con chi parli e quando trapela anche dalle app cifrate. Separa le identità per contesto. Verifica di persona i numeri di sicurezza per chiunque sia sensibile. Considera l’accesso a qualsiasi app gestita centralmente come revocabile.</p></div></li>
     <li><div><h3>Gestisci la tua infrastruttura</h3><p class="effort">Settimane · competenze da sysadmin</p><p>Un server Matrix o XMPP autogestito per una piccola cerchia fidata è l’unico gradino che non si basa sulla promessa di resistenza di un’azienda. Diventi tu stesso il fornitore — plausibilmente fuori dall’ambito commerciale delle regole, anche se questa interpretazione non è mai stata testata.</p></div></li>
   </ol>
@@ -348,7 +349,7 @@ footer .wrap-wide{display:flex;justify-content:space-between;gap:14px;flex-wrap:
 </main>
 
 <footer><div class="wrap-wide">
-  <span>Imparziale. Nessuna pubblicità. Nessun analytics. Questa pagina non ti traccia — sarebbe una scelta strana.</span>
+  <span>Imparziale. Nessuna pubblicità. Solo analisi anonime e senza cookie — autogestite, mai condivise o vendute.</span>
   <span>Realizzato da <a href="https://x.com/melowen" rel="me">Mel</a> · <span class="mono">v2026.07.10</span></span>
 </div></footer>
 
@@ -366,7 +367,10 @@ footer .wrap-wide{display:flex;justify-content:space-between;gap:14px;flex-wrap:
     fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,website:hp,locale:loc})})
       .then(function(r){return r.json().catch(function(){return{};}).then(function(b){return{ok:r.ok,body:b};});})
       .then(function(res){
-        if(res.ok){msg.textContent=MSG.done;form.reset();}
+        if(res.ok){
+          msg.textContent=MSG.done;form.reset();
+          try{if(window.umami&&typeof window.umami.track==='function'){window.umami.track('lead_submitted',{form:'subscribe',location:window.location.pathname});}}catch(e){}
+        }
         else{msg.textContent=(res.body&&res.body.error)||MSG.generic;}
       })
       .catch(function(){msg.textContent=MSG.network;});

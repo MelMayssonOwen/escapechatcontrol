@@ -103,9 +103,9 @@ export default {
     seclabel: "Section — the escape ladder",
     h2: "Five steps, easiest first",
     steps: [
-      { h3: "Stop feeding the services that opt in", effort: "Minutes · free", html: `Move private conversations to <a href="https://signal.org">Signal</a> and private mail to <a href="https://proton.me">Proton</a> or <a href="https://tuta.com">Tuta</a>. Gmail, Instagram DM and Snapchat participated in content scanning for years — this step matters regardless of any future vote.` },
-      { h3: "Bring your people with you", effort: "An afternoon · free", html: `An encrypted messenger you use alone is useless. Move your three most important group chats. For anything genuinely sensitive, use <a href="https://simplex.chat">SimpleX</a> — no phone number, no username, no account tied to you.` },
-      { h3: "Shrink the surveillance you already carry", effort: "A weekend · a supported Pixel", html: `<a href="https://grapheneos.org">GrapheneOS</a> removes Google’s telemetry layer. Be clear-eyed: this does not defeat in-app scanning — it removes a bigger, already-active layer underneath it.` },
+      { h3: "Stop feeding the services that opt in", effort: "Minutes · free", html: `Move private conversations to <a href="https://signal.org" data-umami-event="cta_click" data-umami-event-cta="switch-signal" data-umami-event-location="#ladder">Signal</a> and private mail to <a href="https://proton.me" data-umami-event="cta_click" data-umami-event-cta="switch-proton" data-umami-event-location="#ladder">Proton</a> or <a href="https://tuta.com" data-umami-event="cta_click" data-umami-event-cta="switch-tuta" data-umami-event-location="#ladder">Tuta</a>. Gmail, Instagram DM and Snapchat participated in content scanning for years — this step matters regardless of any future vote.` },
+      { h3: "Bring your people with you", effort: "An afternoon · free", html: `An encrypted messenger you use alone is useless. Move your three most important group chats. For anything genuinely sensitive, use <a href="https://simplex.chat" data-umami-event="cta_click" data-umami-event-cta="switch-simplex" data-umami-event-location="#ladder">SimpleX</a> — no phone number, no username, no account tied to you.` },
+      { h3: "Shrink the surveillance you already carry", effort: "A weekend · a supported Pixel", html: `<a href="https://grapheneos.org" data-umami-event="cta_click" data-umami-event-cta="switch-grapheneos" data-umami-event-location="#ladder">GrapheneOS</a> removes Google’s telemetry layer. Be clear-eyed: this does not defeat in-app scanning — it removes a bigger, already-active layer underneath it.` },
       { h3: "Practice metadata discipline", effort: "Ongoing · free", html: "Who you talk to and when leaks even from encrypted apps. Separate identities per context. Verify safety numbers in person for anyone sensitive. Treat access to any centrally-run app as revocable." },
       { h3: "Run your own infrastructure", effort: "Weeks · sysadmin skills", html: "A self-hosted Matrix or XMPP server for a small trusted circle is the only rung that doesn’t rest on some company’s promise to resist. You become the provider — plausibly outside the rules’ commercial scope, though that reading is untested." },
     ],
@@ -153,7 +153,7 @@ export default {
     ],
   },
   footer: {
-    tagline: `Nonpartisan. No ads. No analytics. This page doesn’t track you — that would be a strange choice.`,
+    tagline: `Nonpartisan. No ads. Anonymous, cookie-free analytics only — self-hosted, never shared or sold.`,
     builtBy: `Built by <a href="https://x.com/melowen" rel="me">Mel</a> · <span class="mono">v2026.07.10</span>`,
   },
 };

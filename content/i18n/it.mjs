@@ -103,9 +103,9 @@ export default {
     seclabel: "Sezione — la scala di fuga",
     h2: "Cinque passi, dal più semplice",
     steps: [
-      { h3: "Smetti di alimentare i servizi che aderiscono", effort: "Minuti · gratis", html: `Sposta le conversazioni private su <a href="https://signal.org">Signal</a> e la posta privata su <a href="https://proton.me">Proton</a> o <a href="https://tuta.com">Tuta</a>. Gmail, Instagram DM e Snapchat hanno partecipato alla scansione dei contenuti per anni — questo passo conta a prescindere da qualsiasi voto futuro.` },
-      { h3: "Porta con te le persone con cui parli", effort: "Un pomeriggio · gratis", html: `Una messaggeria cifrata che usi da solo è inutile. Sposta le tue tre chat di gruppo più importanti. Per tutto ciò che è davvero sensibile, usa <a href="https://simplex.chat">SimpleX</a> — nessun numero di telefono, nessun nome utente, nessun account collegato a te.` },
-      { h3: "Riduci la sorveglianza che porti già con te", effort: "Un weekend · un Pixel supportato", html: `<a href="https://grapheneos.org">GrapheneOS</a> rimuove il livello di telemetria di Google. Sii lucido: questo non sconfigge la scansione dentro le app — rimuove un livello più ampio e già attivo che sta sotto.` },
+      { h3: "Smetti di alimentare i servizi che aderiscono", effort: "Minuti · gratis", html: `Sposta le conversazioni private su <a href="https://signal.org" data-umami-event="cta_click" data-umami-event-cta="switch-signal" data-umami-event-location="#ladder">Signal</a> e la posta privata su <a href="https://proton.me" data-umami-event="cta_click" data-umami-event-cta="switch-proton" data-umami-event-location="#ladder">Proton</a> o <a href="https://tuta.com" data-umami-event="cta_click" data-umami-event-cta="switch-tuta" data-umami-event-location="#ladder">Tuta</a>. Gmail, Instagram DM e Snapchat hanno partecipato alla scansione dei contenuti per anni — questo passo conta a prescindere da qualsiasi voto futuro.` },
+      { h3: "Porta con te le persone con cui parli", effort: "Un pomeriggio · gratis", html: `Una messaggeria cifrata che usi da solo è inutile. Sposta le tue tre chat di gruppo più importanti. Per tutto ciò che è davvero sensibile, usa <a href="https://simplex.chat" data-umami-event="cta_click" data-umami-event-cta="switch-simplex" data-umami-event-location="#ladder">SimpleX</a> — nessun numero di telefono, nessun nome utente, nessun account collegato a te.` },
+      { h3: "Riduci la sorveglianza che porti già con te", effort: "Un weekend · un Pixel supportato", html: `<a href="https://grapheneos.org" data-umami-event="cta_click" data-umami-event-cta="switch-grapheneos" data-umami-event-location="#ladder">GrapheneOS</a> rimuove il livello di telemetria di Google. Sii lucido: questo non sconfigge la scansione dentro le app — rimuove un livello più ampio e già attivo che sta sotto.` },
       { h3: "Applica disciplina sui metadati", effort: "Continuo · gratis", html: "Con chi parli e quando trapela anche dalle app cifrate. Separa le identità per contesto. Verifica di persona i numeri di sicurezza per chiunque sia sensibile. Considera l’accesso a qualsiasi app gestita centralmente come revocabile." },
       { h3: "Gestisci la tua infrastruttura", effort: "Settimane · competenze da sysadmin", html: "Un server Matrix o XMPP autogestito per una piccola cerchia fidata è l’unico gradino che non si basa sulla promessa di resistenza di un’azienda. Diventi tu stesso il fornitore — plausibilmente fuori dall’ambito commerciale delle regole, anche se questa interpretazione non è mai stata testata." },
     ],
@@ -153,7 +153,7 @@ export default {
     ],
   },
   footer: {
-    tagline: `Imparziale. Nessuna pubblicità. Nessun analytics. Questa pagina non ti traccia — sarebbe una scelta strana.`,
+    tagline: `Imparziale. Nessuna pubblicità. Solo analisi anonime e senza cookie — autogestite, mai condivise o vendute.`,
     builtBy: `Realizzato da <a href="https://x.com/melowen" rel="me">Mel</a> · <span class="mono">v2026.07.10</span>`,
   },
 };

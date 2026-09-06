@@ -102,9 +102,9 @@ export default {
     seclabel: "Section — l’échelle d’évasion",
     h2: "Cinq étapes, de la plus simple à la plus difficile",
     steps: [
-      { h3: "Arrêtez d’alimenter les services qui participent", effort: "Quelques minutes · gratuit", html: `Déplacez vos conversations privées vers <a href="https://signal.org">Signal</a> et votre courrier privé vers <a href="https://proton.me">Proton</a> ou <a href="https://tuta.com">Tuta</a>. Gmail, Instagram DM et Snapchat ont participé au scan de contenu pendant des années — cette étape compte, quel que soit le résultat d’un futur vote.` },
-      { h3: "Embarquez votre entourage", effort: "Un après-midi · gratuit", html: `Une messagerie chiffrée que vous êtes seul à utiliser ne sert à rien. Déplacez vos trois discussions de groupe les plus importantes. Pour tout ce qui est réellement sensible, utilisez <a href="https://simplex.chat">SimpleX</a> — pas de numéro de téléphone, pas de nom d’utilisateur, aucun compte lié à vous.` },
-      { h3: "Réduisez la surveillance que vous portez déjà", effort: "Un week-end · un Pixel compatible", html: `<a href="https://grapheneos.org">GrapheneOS</a> retire la couche de télémétrie de Google. Soyez lucide : cela ne neutralise pas le scan intégré aux applications — cela retire une couche plus vaste, déjà active, en dessous.` },
+      { h3: "Arrêtez d’alimenter les services qui participent", effort: "Quelques minutes · gratuit", html: `Déplacez vos conversations privées vers <a href="https://signal.org" data-umami-event="cta_click" data-umami-event-cta="switch-signal" data-umami-event-location="#ladder">Signal</a> et votre courrier privé vers <a href="https://proton.me" data-umami-event="cta_click" data-umami-event-cta="switch-proton" data-umami-event-location="#ladder">Proton</a> ou <a href="https://tuta.com" data-umami-event="cta_click" data-umami-event-cta="switch-tuta" data-umami-event-location="#ladder">Tuta</a>. Gmail, Instagram DM et Snapchat ont participé au scan de contenu pendant des années — cette étape compte, quel que soit le résultat d’un futur vote.` },
+      { h3: "Embarquez votre entourage", effort: "Un après-midi · gratuit", html: `Une messagerie chiffrée que vous êtes seul à utiliser ne sert à rien. Déplacez vos trois discussions de groupe les plus importantes. Pour tout ce qui est réellement sensible, utilisez <a href="https://simplex.chat" data-umami-event="cta_click" data-umami-event-cta="switch-simplex" data-umami-event-location="#ladder">SimpleX</a> — pas de numéro de téléphone, pas de nom d’utilisateur, aucun compte lié à vous.` },
+      { h3: "Réduisez la surveillance que vous portez déjà", effort: "Un week-end · un Pixel compatible", html: `<a href="https://grapheneos.org" data-umami-event="cta_click" data-umami-event-cta="switch-grapheneos" data-umami-event-location="#ladder">GrapheneOS</a> retire la couche de télémétrie de Google. Soyez lucide : cela ne neutralise pas le scan intégré aux applications — cela retire une couche plus vaste, déjà active, en dessous.` },
       { h3: "Adoptez une discipline sur les métadonnées", effort: "En continu · gratuit", html: "Qui vous parlez et quand fuit même depuis des applications chiffrées. Séparez vos identités selon le contexte. Vérifiez les numéros de sécurité en personne pour toute personne sensible. Considérez l’accès à toute application gérée de façon centralisée comme révocable." },
       { h3: "Gérez votre propre infrastructure", effort: "Des semaines · compétences d’administration système", html: "Un serveur Matrix ou XMPP auto-hébergé pour un petit cercle de confiance est le seul échelon qui ne repose pas sur la promesse de résistance d’une entreprise. Vous devenez vous-même le fournisseur — plausiblement en dehors du champ commercial des règles, bien que cette lecture reste non testée." },
     ],
@@ -152,7 +152,7 @@ export default {
     ],
   },
   footer: {
-    tagline: `Non partisan. Pas de publicité. Pas d’analytique. Cette page ne vous piste pas — ce serait un choix étrange.`,
+    tagline: `Non partisan. Pas de publicité. Uniquement des statistiques anonymes et sans cookies — auto-hébergées, jamais partagées ni vendues.`,
     builtBy: `Créé par <a href="https://x.com/melowen" rel="me">Mel</a> · <span class="mono">v2026.07.10</span>`,
   },
 };

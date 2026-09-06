@@ -197,6 +197,7 @@ td:first-child{font-weight:600;white-space:nowrap}
 footer{padding:32px 0 48px;font-size:14px;color:var(--muted)}
 footer .wrap-wide{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 </style>
+<script defer src="/stats/script.js" data-website-id="ff4fc1c2-2a81-4907-aee1-2d36c582cbbe" data-host-url="https://escapechatcontrol.com/stats"></script>
 </head>
 <body>
 
@@ -296,9 +297,9 @@ footer .wrap-wide{display:flex;justify-content:space-between;gap:14px;flex-wrap:
   <p class="seclabel">Secção — a escada de fuga</p>
   <h2>Cinco passos, do mais fácil ao mais difícil</h2>
   <ol class="ladder">
-    <li><div><h3>Deixe de alimentar os serviços que participam</h3><p class="effort">Minutos · grátis</p><p>Mude as suas conversas privadas para o <a href="https://signal.org">Signal</a> e o seu correio privado para o <a href="https://proton.me">Proton</a> ou o <a href="https://tuta.com">Tuta</a>. O Gmail, o Instagram DM e o Snapchat participaram na análise de conteúdos durante anos — este passo importa independentemente de qualquer votação futura.</p></div></li>
-    <li><div><h3>Leve consigo as pessoas com quem fala</h3><p class="effort">Uma tarde · grátis</p><p>Uma aplicação de mensagens encriptada que só você utiliza é inútil. Mude as suas três conversas de grupo mais importantes. Para tudo o que for genuinamente sensível, use o <a href="https://simplex.chat">SimpleX</a> — sem número de telefone, sem nome de utilizador, sem conta ligada a si.</p></div></li>
-    <li><div><h3>Reduza a vigilância que já transporta consigo</h3><p class="effort">Um fim de semana · um Pixel compatível</p><p>O <a href="https://grapheneos.org">GrapheneOS</a> remove a camada de telemetria da Google. Seja realista: isto não neutraliza a análise dentro das aplicações — remove uma camada maior, já ativa, por baixo dela.</p></div></li>
+    <li><div><h3>Deixe de alimentar os serviços que participam</h3><p class="effort">Minutos · grátis</p><p>Mude as suas conversas privadas para o <a href="https://signal.org" data-umami-event="cta_click" data-umami-event-cta="switch-signal" data-umami-event-location="#ladder">Signal</a> e o seu correio privado para o <a href="https://proton.me" data-umami-event="cta_click" data-umami-event-cta="switch-proton" data-umami-event-location="#ladder">Proton</a> ou o <a href="https://tuta.com" data-umami-event="cta_click" data-umami-event-cta="switch-tuta" data-umami-event-location="#ladder">Tuta</a>. O Gmail, o Instagram DM e o Snapchat participaram na análise de conteúdos durante anos — este passo importa independentemente de qualquer votação futura.</p></div></li>
+    <li><div><h3>Leve consigo as pessoas com quem fala</h3><p class="effort">Uma tarde · grátis</p><p>Uma aplicação de mensagens encriptada que só você utiliza é inútil. Mude as suas três conversas de grupo mais importantes. Para tudo o que for genuinamente sensível, use o <a href="https://simplex.chat" data-umami-event="cta_click" data-umami-event-cta="switch-simplex" data-umami-event-location="#ladder">SimpleX</a> — sem número de telefone, sem nome de utilizador, sem conta ligada a si.</p></div></li>
+    <li><div><h3>Reduza a vigilância que já transporta consigo</h3><p class="effort">Um fim de semana · um Pixel compatível</p><p>O <a href="https://grapheneos.org" data-umami-event="cta_click" data-umami-event-cta="switch-grapheneos" data-umami-event-location="#ladder">GrapheneOS</a> remove a camada de telemetria da Google. Seja realista: isto não neutraliza a análise dentro das aplicações — remove uma camada maior, já ativa, por baixo dela.</p></div></li>
     <li><div><h3>Pratique disciplina de metadados</h3><p class="effort">Contínuo · grátis</p><p>Com quem fala e quando é algo que vaza mesmo a partir de aplicações encriptadas. Separe identidades por contexto. Verifique presencialmente os números de segurança para contactos sensíveis. Trate o acesso a qualquer aplicação de gestão centralizada como algo revogável.</p></div></li>
     <li><div><h3>Corra a sua própria infraestrutura</h3><p class="effort">Semanas · conhecimentos de administração de sistemas</p><p>Um servidor Matrix ou XMPP autoalojado para um pequeno círculo de confiança é o único degrau que não depende da promessa de resistência de uma empresa. Você torna-se o prestador de serviço — plausivelmente fora do âmbito comercial das regras, embora essa interpretação ainda não tenha sido testada.</p></div></li>
   </ol>
@@ -348,7 +349,7 @@ footer .wrap-wide{display:flex;justify-content:space-between;gap:14px;flex-wrap:
 </main>
 
 <footer><div class="wrap-wide">
-  <span>Apartidário. Sem anúncios. Sem análises de tráfego. Esta página não o rastreia — isso seria uma escolha estranha.</span>
+  <span>Apartidário. Sem anúncios. Apenas análises anónimas e sem cookies — auto-hospedadas, nunca partilhadas ou vendidas.</span>
   <span>Construído por <a href="https://x.com/melowen" rel="me">Mel</a> · <span class="mono">v2026.07.10</span></span>
 </div></footer>
 
@@ -366,7 +367,10 @@ footer .wrap-wide{display:flex;justify-content:space-between;gap:14px;flex-wrap:
     fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,website:hp,locale:loc})})
       .then(function(r){return r.json().catch(function(){return{};}).then(function(b){return{ok:r.ok,body:b};});})
       .then(function(res){
-        if(res.ok){msg.textContent=MSG.done;form.reset();}
+        if(res.ok){
+          msg.textContent=MSG.done;form.reset();
+          try{if(window.umami&&typeof window.umami.track==='function'){window.umami.track('lead_submitted',{form:'subscribe',location:window.location.pathname});}}catch(e){}
+        }
         else{msg.textContent=(res.body&&res.body.error)||MSG.generic;}
       })
       .catch(function(){msg.textContent=MSG.network;});

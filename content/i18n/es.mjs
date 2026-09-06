@@ -103,9 +103,9 @@ export default {
     seclabel: "Sección — la escalera de escape",
     h2: "Cinco pasos, el más fácil primero",
     steps: [
-      { h3: "Deja de alimentar a los servicios que se suman", effort: "Minutos · gratis", html: `Mueve tus conversaciones privadas a <a href="https://signal.org">Signal</a> y tu correo privado a <a href="https://proton.me">Proton</a> o <a href="https://tuta.com">Tuta</a>. Gmail, Instagram DM y Snapchat han participado en el escaneo de contenido durante años — este paso importa al margen de cualquier votación futura.` },
-      { h3: "Llévate a tu gente contigo", effort: "Una tarde · gratis", html: `Una app de mensajería cifrada que uses tú solo no sirve de nada. Mueve tus tres chats de grupo más importantes. Para cualquier cosa realmente sensible, usa <a href="https://simplex.chat">SimpleX</a> — sin número de teléfono, sin nombre de usuario, sin cuenta vinculada a ti.` },
-      { h3: "Reduce la vigilancia que ya llevas encima", effort: "Un fin de semana · un Pixel compatible", html: `<a href="https://grapheneos.org">GrapheneOS</a> elimina la capa de telemetría de Google. Que quede claro: esto no vence el escaneo dentro de las apps — elimina una capa mayor, ya activa, que está por debajo.` },
+      { h3: "Deja de alimentar a los servicios que se suman", effort: "Minutos · gratis", html: `Mueve tus conversaciones privadas a <a href="https://signal.org" data-umami-event="cta_click" data-umami-event-cta="switch-signal" data-umami-event-location="#ladder">Signal</a> y tu correo privado a <a href="https://proton.me" data-umami-event="cta_click" data-umami-event-cta="switch-proton" data-umami-event-location="#ladder">Proton</a> o <a href="https://tuta.com" data-umami-event="cta_click" data-umami-event-cta="switch-tuta" data-umami-event-location="#ladder">Tuta</a>. Gmail, Instagram DM y Snapchat han participado en el escaneo de contenido durante años — este paso importa al margen de cualquier votación futura.` },
+      { h3: "Llévate a tu gente contigo", effort: "Una tarde · gratis", html: `Una app de mensajería cifrada que uses tú solo no sirve de nada. Mueve tus tres chats de grupo más importantes. Para cualquier cosa realmente sensible, usa <a href="https://simplex.chat" data-umami-event="cta_click" data-umami-event-cta="switch-simplex" data-umami-event-location="#ladder">SimpleX</a> — sin número de teléfono, sin nombre de usuario, sin cuenta vinculada a ti.` },
+      { h3: "Reduce la vigilancia que ya llevas encima", effort: "Un fin de semana · un Pixel compatible", html: `<a href="https://grapheneos.org" data-umami-event="cta_click" data-umami-event-cta="switch-grapheneos" data-umami-event-location="#ladder">GrapheneOS</a> elimina la capa de telemetría de Google. Que quede claro: esto no vence el escaneo dentro de las apps — elimina una capa mayor, ya activa, que está por debajo.` },
       { h3: "Practica disciplina con los metadatos", effort: "Continuo · gratis", html: "Con quién hablas y cuándo se filtra incluso desde apps cifradas. Separa identidades según el contexto. Verifica los números de seguridad en persona para cualquier contacto sensible. Trata el acceso a cualquier app gestionada de forma centralizada como algo revocable." },
       { h3: "Gestiona tu propia infraestructura", effort: "Semanas · conocimientos de administración de sistemas", html: "Un servidor Matrix o XMPP autoalojado para un pequeño círculo de confianza es el único peldaño que no depende de la promesa de resistencia de ninguna empresa. Te conviertes tú en el proveedor — posiblemente fuera del ámbito comercial de la normativa, aunque esa interpretación no se ha puesto a prueba." },
     ],
@@ -153,7 +153,7 @@ export default {
     ],
   },
   footer: {
-    tagline: `Imparcial. Sin publicidad. Sin analítica. Esta página no te rastrea — sería una elección extraña.`,
+    tagline: `Imparcial. Sin publicidad. Solo analítica anónima y sin cookies — autoalojada, nunca compartida ni vendida.`,
     builtBy: `Creado por <a href="https://x.com/melowen" rel="me">Mel</a> · <span class="mono">v2026.07.10</span>`,
   },
 };

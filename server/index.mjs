@@ -5,9 +5,14 @@
  * whole product at this stage (see docs/superpowers/specs/): one email when a
  * tracker status changes or the September CSAR fight moves. No other use.
  *
- * Privacy posture is part of the brand: no analytics, no raw email addresses
- * in logs, static files served from an in-memory cache built at boot (which
+ * Privacy posture is part of the brand: no ads, no raw email addresses in
+ * logs, static files served from an in-memory cache built at boot (which
  * also means no runtime filesystem access and no symlink surprises).
+ * Analytics is the one exception: cookie-free, self-hosted Umami, proxied
+ * same-origin at /stats/script.js and /stats/api/send (see the two routes
+ * below) so ad blockers and mixed-content rules don't silently drop it.
+ * The proxy destination is always the real umami.opsibyte.com hostname —
+ * never an internal/sslip address, which 404s at the edge.
  */
 import { createServer } from "node:http";
 import { readFileSync, readdirSync, statSync } from "node:fs";
@@ -50,6 +55,54 @@ const FILES = new Map();
     FILES.set(rel, { body: readFileSync(full), type: MIME[extname(full)] || "application/octet-stream" });
   }
 })(SITE);
+
+// Same-origin Umami proxy. Exactly these two paths — never `/stats/:path*`,
+// which would relay the Umami admin UI. Destination is the real public
+// hostname (TLS SNI + Host resolve correctly on their own); the internal
+// sslip.io address is decommissioned and 404s silently at the edge.
+const UMAMI_ORIGIN = "https://umami.opsibyte.com";
+
+async function proxyUmamiScript(req, res) {
+  try {
+    const upstream = await fetch(`${UMAMI_ORIGIN}/script.js`);
+    const body = Buffer.from(await upstream.arrayBuffer());
+    res.writeHead(upstream.status, {
+      "Content-Type": upstream.headers.get("content-type") || "application/javascript",
+      "Cache-Control": "public, max-age=3600",
+    });
+    res.end(body);
+  } catch (err) {
+    console.error("[umami] script proxy error:", err);
+    res.writeHead(502, { "Content-Type": "text/plain" });
+    res.end("bad gateway");
+  }
+}
+
+function proxyUmamiSend(req, res) {
+  let raw = "";
+  req.on("data", (c) => { raw += c; if (raw.length > 65536) req.destroy(); });
+  req.on("end", async () => {
+    try {
+      const upstream = await fetch(`${UMAMI_ORIGIN}/api/send`, {
+        method: "POST",
+        headers: {
+          "Content-Type": req.headers["content-type"] || "application/json",
+          "User-Agent": req.headers["user-agent"] || "",
+        },
+        body: raw,
+      });
+      const body = Buffer.from(await upstream.arrayBuffer());
+      res.writeHead(upstream.status, {
+        "Content-Type": upstream.headers.get("content-type") || "application/json",
+      });
+      res.end(body);
+    } catch (err) {
+      console.error("[umami] send proxy error:", err);
+      res.writeHead(502, { "Content-Type": "application/json" });
+      res.end(JSON.stringify({ error: "bad gateway" }));
+    }
+  });
+}
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -131,6 +184,13 @@ function send(res, status, body, headers = {}) {
 
 const server = createServer((req, res) => {
   const url = new URL(req.url, "http://localhost");
+
+  if (req.method === "GET" && url.pathname === "/stats/script.js") {
+    return proxyUmamiScript(req, res);
+  }
+  if (req.method === "POST" && url.pathname === "/stats/api/send") {
+    return proxyUmamiSend(req, res);
+  }
 
   if (req.method === "POST" && url.pathname === "/api/subscribe") {
     if (throttled(clientIp(req))) return send(res, 429, { error: "Too many attempts. Wait a minute." });

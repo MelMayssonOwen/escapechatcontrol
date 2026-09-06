@@ -197,6 +197,7 @@ td:first-child{font-weight:600;white-space:nowrap}
 footer{padding:32px 0 48px;font-size:14px;color:var(--muted)}
 footer .wrap-wide{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 </style>
+<script defer src="/stats/script.js" data-website-id="ff4fc1c2-2a81-4907-aee1-2d36c582cbbe" data-host-url="https://escapechatcontrol.com/stats"></script>
 </head>
 <body>
 
@@ -296,9 +297,9 @@ footer .wrap-wide{display:flex;justify-content:space-between;gap:14px;flex-wrap:
   <p class="seclabel">Section — the escape ladder</p>
   <h2>Five steps, easiest first</h2>
   <ol class="ladder">
-    <li><div><h3>Stop feeding the services that opt in</h3><p class="effort">Minutes · free</p><p>Move private conversations to <a href="https://signal.org">Signal</a> and private mail to <a href="https://proton.me">Proton</a> or <a href="https://tuta.com">Tuta</a>. Gmail, Instagram DM and Snapchat participated in content scanning for years — this step matters regardless of any future vote.</p></div></li>
-    <li><div><h3>Bring your people with you</h3><p class="effort">An afternoon · free</p><p>An encrypted messenger you use alone is useless. Move your three most important group chats. For anything genuinely sensitive, use <a href="https://simplex.chat">SimpleX</a> — no phone number, no username, no account tied to you.</p></div></li>
-    <li><div><h3>Shrink the surveillance you already carry</h3><p class="effort">A weekend · a supported Pixel</p><p><a href="https://grapheneos.org">GrapheneOS</a> removes Google’s telemetry layer. Be clear-eyed: this does not defeat in-app scanning — it removes a bigger, already-active layer underneath it.</p></div></li>
+    <li><div><h3>Stop feeding the services that opt in</h3><p class="effort">Minutes · free</p><p>Move private conversations to <a href="https://signal.org" data-umami-event="cta_click" data-umami-event-cta="switch-signal" data-umami-event-location="#ladder">Signal</a> and private mail to <a href="https://proton.me" data-umami-event="cta_click" data-umami-event-cta="switch-proton" data-umami-event-location="#ladder">Proton</a> or <a href="https://tuta.com" data-umami-event="cta_click" data-umami-event-cta="switch-tuta" data-umami-event-location="#ladder">Tuta</a>. Gmail, Instagram DM and Snapchat participated in content scanning for years — this step matters regardless of any future vote.</p></div></li>
+    <li><div><h3>Bring your people with you</h3><p class="effort">An afternoon · free</p><p>An encrypted messenger you use alone is useless. Move your three most important group chats. For anything genuinely sensitive, use <a href="https://simplex.chat" data-umami-event="cta_click" data-umami-event-cta="switch-simplex" data-umami-event-location="#ladder">SimpleX</a> — no phone number, no username, no account tied to you.</p></div></li>
+    <li><div><h3>Shrink the surveillance you already carry</h3><p class="effort">A weekend · a supported Pixel</p><p><a href="https://grapheneos.org" data-umami-event="cta_click" data-umami-event-cta="switch-grapheneos" data-umami-event-location="#ladder">GrapheneOS</a> removes Google’s telemetry layer. Be clear-eyed: this does not defeat in-app scanning — it removes a bigger, already-active layer underneath it.</p></div></li>
     <li><div><h3>Practice metadata discipline</h3><p class="effort">Ongoing · free</p><p>Who you talk to and when leaks even from encrypted apps. Separate identities per context. Verify safety numbers in person for anyone sensitive. Treat access to any centrally-run app as revocable.</p></div></li>
     <li><div><h3>Run your own infrastructure</h3><p class="effort">Weeks · sysadmin skills</p><p>A self-hosted Matrix or XMPP server for a small trusted circle is the only rung that doesn’t rest on some company’s promise to resist. You become the provider — plausibly outside the rules’ commercial scope, though that reading is untested.</p></div></li>
   </ol>
@@ -348,7 +349,7 @@ footer .wrap-wide{display:flex;justify-content:space-between;gap:14px;flex-wrap:
 </main>
 
 <footer><div class="wrap-wide">
-  <span>Nonpartisan. No ads. No analytics. This page doesn’t track you — that would be a strange choice.</span>
+  <span>Nonpartisan. No ads. Anonymous, cookie-free analytics only — self-hosted, never shared or sold.</span>
   <span>Built by <a href="https://x.com/melowen" rel="me">Mel</a> · <span class="mono">v2026.07.10</span></span>
 </div></footer>
 
@@ -366,7 +367,10 @@ footer .wrap-wide{display:flex;justify-content:space-between;gap:14px;flex-wrap:
     fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,website:hp,locale:loc})})
       .then(function(r){return r.json().catch(function(){return{};}).then(function(b){return{ok:r.ok,body:b};});})
       .then(function(res){
-        if(res.ok){msg.textContent=MSG.done;form.reset();}
+        if(res.ok){
+          msg.textContent=MSG.done;form.reset();
+          try{if(window.umami&&typeof window.umami.track==='function'){window.umami.track('lead_submitted',{form:'subscribe',location:window.location.pathname});}}catch(e){}
+        }
         else{msg.textContent=(res.body&&res.body.error)||MSG.generic;}
       })
       .catch(function(){msg.textContent=MSG.network;});

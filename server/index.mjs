@@ -182,6 +182,23 @@ function send(res, status, body, headers = {}) {
   res.end(JSON.stringify(body));
 }
 
+const CANONICAL_ORIGIN = "https://escapechatcontrol.com";
+const LOCALE_DIRS = new Set(["es", "fr", "it", "pt"]);
+
+function requestHost(req) {
+  // Host may include a port. This site is not served on a bracketed IPv6 name.
+  return (req.headers.host || "").replace(/:\d+$/, "").toLowerCase();
+}
+
+function redirect301(res, location) {
+  res.writeHead(301, {
+    Location: location,
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "no-referrer",
+  });
+  res.end();
+}
+
 const server = createServer((req, res) => {
   const url = new URL(req.url, "http://localhost");
 
@@ -235,12 +252,29 @@ const server = createServer((req, res) => {
 
   if (req.method !== "GET" && req.method !== "HEAD") return send(res, 405, { error: "method not allowed" });
 
-  // Directory-index resolution: "/" -> "/index.html", and "/es/" (or "/es",
-  // no trailing slash) -> "/es/index.html" for every locale subdirectory.
-  let path = url.pathname;
+  // www is the same document as the apex. Keep the path and query; never redirect the apex.
+  if (requestHost(req) === "www.escapechatcontrol.com") {
+    return redirect301(res, CANONICAL_ORIGIN + url.pathname + url.search);
+  }
+
+  // Duplicate URLs of the five canonical pages. "/" and "/es/" (and the other
+  // locale directories) stay 200. Query string is preserved.
+  const requested = url.pathname;
+  if (requested === "/index.html") {
+    return redirect301(res, `${CANONICAL_ORIGIN}/${url.search}`);
+  }
+  const localeIndex = requested.match(/^\/(es|fr|it|pt)\/index\.html$/);
+  if (localeIndex) {
+    return redirect301(res, `${CANONICAL_ORIGIN}/${localeIndex[1]}/${url.search}`);
+  }
+  if (LOCALE_DIRS.has(requested.slice(1))) {
+    return redirect301(res, `${CANONICAL_ORIGIN}${requested}/${url.search}`);
+  }
+
+  // Directory-index resolution: "/" -> "/index.html", "/es/" -> "/es/index.html".
+  let path = requested;
   if (path === "/") path = "/index.html";
   else if (path.endsWith("/")) path = path + "index.html";
-  else if (!FILES.has(path) && FILES.has(path + "/index.html")) path = path + "/index.html";
   const file = FILES.get(path);
   if (!file) {
     res.writeHead(404, { "Content-Type": "text/plain" });
@@ -248,7 +282,7 @@ const server = createServer((req, res) => {
   }
   res.writeHead(200, {
     "Content-Type": file.type,
-    "Cache-Control": path === "/index.html" ? "no-cache" : "public, max-age=86400",
+    "Cache-Control": file.type.startsWith("text/html") ? "no-cache" : "public, max-age=86400",
     "X-Content-Type-Options": "nosniff",
     "Referrer-Policy": "no-referrer",
   });

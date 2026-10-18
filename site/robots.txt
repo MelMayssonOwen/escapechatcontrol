@@ -1,34 +1,45 @@
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /stats/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /stats/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /stats/
 
 User-agent: Perplexity-User
 Allow: /
+Disallow: /stats/
 
 User-agent: Claude-SearchBot
 Allow: /
+Disallow: /stats/
 
 User-agent: Claude-User
 Allow: /
+Disallow: /stats/
 
 User-agent: Googlebot
 Allow: /
+Disallow: /stats/
 
 User-agent: Bingbot
 Allow: /
+Disallow: /stats/
 
 User-agent: GPTBot
 Allow: /
+Disallow: /stats/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /stats/
 
 User-agent: *
 Allow: /
+Disallow: /stats/
 
 Sitemap: https://escapechatcontrol.com/sitemap.xml

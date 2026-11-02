@@ -147,6 +147,7 @@ ${renderJsonLd(locale, c)}
   <p class="eyebrow">${c.hero.eyebrow}</p>
   <h1>${c.jsonld.articleHeadline}</h1>
   <p class="sub">${c.hero.sub}</p>
+  <p class="hero-cta"><a class="btn-hero" href="#subscribe" data-umami-event="cta_click" data-umami-event-cta="hero-subscribe" data-umami-event-location="hero">${c.subscribe.button}</a></p>
 
   <div class="ledger" role="img" aria-label="${escapeAttr(c.ledger.ariaLabel)}">
     <div class="row"><span>${c.ledger.rowLabel}</span><span>${c.ledger.rowLabelRight}</span></div>

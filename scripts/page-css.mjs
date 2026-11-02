@@ -40,6 +40,9 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 h1{font-family:var(--serif);font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.12;letter-spacing:-.01em;max-width:17ch}
 .hero .sub{margin-top:22px;font-size:19px;color:var(--muted);max-width:56ch}
 .hero .sub strong{color:var(--ink)}
+.hero-cta{margin-top:22px}
+.btn-hero{display:inline-block;background:var(--ink);color:var(--paper);padding:12px 22px;font-weight:600;text-decoration:none}
+.btn-hero:hover{opacity:.9}
 
 /* the roll-call ledger — signature element */
 .ledger{margin-top:44px;border:1px solid var(--ink);padding:22px 24px;max-width:640px}

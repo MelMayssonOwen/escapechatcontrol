@@ -131,6 +131,7 @@ ${renderJsonLd(locale, c)}
 </script>
 <style>${PAGE_CSS}</style>
 <script defer src="/stats/script.js" data-website-id="ff4fc1c2-2a81-4907-aee1-2d36c582cbbe" data-host-url="https://escapechatcontrol.com/stats"></script>
+<script defer src="/link-landing.js"></script>
 </head>
 <body>
 

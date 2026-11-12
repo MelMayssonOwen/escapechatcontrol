@@ -250,11 +250,32 @@ ${sourceItems}
       .then(function(res){
         if(res.ok){
           msg.textContent=MSG.done;form.reset();
-          try{if(window.umami&&typeof window.umami.track==='function'){window.umami.track('lead_submitted',{form:'subscribe',location:window.location.pathname});}}catch(e){}
+          window.eccTrack('lead_submitted',{form:'subscribe',location:window.location.pathname,locale:loc});
         }
         else{msg.textContent=(res.body&&res.body.error)||MSG.generic;}
       })
       .catch(function(){msg.textContent=MSG.network;});
+  });
+})();
+</script>
+<script>
+(function(){
+  var KEY='ecc_first_touch',TTL=90*864e5;
+  function g(){try{var o=JSON.parse(localStorage.getItem(KEY)||'null');return o&&o.t&&Date.now()-o.t<TTL?o:null;}catch(e){return null;}}
+  try{
+    var p=new URLSearchParams(location.search),cur={src:p.get('utm_source')||p.get('ref')||'',med:p.get('utm_medium')||'',cmp:p.get('utm_campaign')||'',host:'',land:location.pathname,t:Date.now()};
+    try{if(document.referrer){var h=new URL(document.referrer).hostname;if(h!==location.hostname)cur.host=h;}}catch(e){}
+    var old=g();if(!old||(!old.src&&cur.src))localStorage.setItem(KEY,JSON.stringify(cur));
+  }catch(e){}
+  function tr(n,d){try{var o=g()||{};d=d||{};d.utm_source=o.src||'';d.utm_medium=o.med||'';d.utm_campaign=o.cmp||'';d.referrer_host=o.host||'';d.landing=o.land||'';if(window.umami&&window.umami.track)window.umami.track(n,d);}catch(e){}}
+  window.eccTrack=tr;
+  document.addEventListener('click',function(e){
+    var el=e.target&&e.target.closest?e.target.closest('a,button'):null;if(!el)return;
+    if(el.hasAttribute('data-umami-event')||el.type==='submit')return;
+    tr('cta_click',{label:(el.textContent||'').replace(/[ \\t\\r\\n]+/g,' ').trim().slice(0,60),path:location.pathname,href:(el.getAttribute('href')||'').slice(0,120)});
+  },true);
+  document.addEventListener('focusin',function(e){
+    var t=e.target;if(t&&t.type==='email'&&!window.__eccS){window.__eccS=1;tr('signup_started',{path:location.pathname});}
   });
 })();
 </script>

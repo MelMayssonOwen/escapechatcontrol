@@ -101,6 +101,9 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .wrap{max-width:720px;margin:0 auto;padding:0 20px}
 .wrap-wide{max-width:960px;margin:0 auto;padding:0 20px}
 
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:8px 14px;z-index:10;font-family:var(--mono);font-size:13px}
+.skip:focus{left:8px;top:8px}
+
 /* document header */
 .dochead{border-bottom:2px solid var(--ink);padding:14px 0;font-family:var(--mono);font-size:12px;letter-spacing:.04em}
 .dochead .wrap-wide{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
@@ -109,8 +112,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 
 /* language switcher */
 .langswitch{font-family:var(--mono);font-size:12px;letter-spacing:.02em;display:flex;gap:10px;flex-wrap:wrap}
-.langswitch a{text-decoration:none;border-bottom:1px solid transparent}
-.langswitch a:hover{border-bottom-color:currentColor}
+.langswitch a{text-decoration-color:transparent;padding-block:3px;margin-block:-3px}
+.langswitch a:hover{text-decoration-color:currentColor}
 .langswitch span[aria-current]{font-weight:700;color:var(--ink)}
 
 /* hero */
@@ -185,11 +188,11 @@ td:first-child{font-weight:600;white-space:nowrap}
 /* subscribe */
 .subscribe{background:var(--ink);color:var(--paper)}
 .subscribe h2,.subscribe .seclabel{color:inherit}
-.subscribe .seclabel{color:color-mix(in srgb,var(--paper) 60%,transparent)}
+.subscribe .seclabel{color:color-mix(in srgb,var(--paper) 65%,transparent)}
 .subscribe p{max-width:52ch}
 .subform{display:flex;gap:10px;margin-top:24px;max-width:480px;flex-wrap:wrap}
 .subform input{flex:1;min-width:220px;padding:12px 14px;font-size:16px;font-family:var(--mono);background:transparent;border:1px solid color-mix(in srgb,var(--paper) 50%,transparent);color:inherit}
-.subform input::placeholder{color:color-mix(in srgb,var(--paper) 45%,transparent)}
+.subform input::placeholder{color:color-mix(in srgb,var(--paper) 65%,transparent)}
 .subform button{padding:12px 22px;font-size:15px;font-weight:700;background:var(--paper);color:var(--ink);border:none;cursor:pointer}
 .subform button:hover{opacity:.9}
 .submsg{font-family:var(--mono);font-size:13px;margin-top:12px;min-height:1.4em}
@@ -205,6 +208,7 @@ footer .wrap-wide{display:flex;justify-content:space-between;gap:14px;flex-wrap:
 </head>
 <body>
 
+<a class="skip" href="#main">Skip to content</a>
 <header class="dochead">
   <div class="wrap-wide">
     <span><strong>ESCAPE CHAT CONTROL</strong> · escapechatcontrol.com</span>
@@ -217,7 +221,7 @@ footer .wrap-wide{display:flex;justify-content:space-between;gap:14px;flex-wrap:
   </div>
 </header>
 
-<main>
+<main id="main">
 <div class="hero"><div class="wrap-wide">
   <p class="eyebrow">Comunicazioni interpersonali UE · Regolamento (UE) 2021/1232 · seconda lettura, 9 luglio 2026</p>
   <h1>314 eurodeputati hanno votato per bocciare Chat Control. È passata lo stesso.</h1>

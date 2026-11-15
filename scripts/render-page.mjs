@@ -135,6 +135,7 @@ ${renderJsonLd(locale, c)}
 </head>
 <body>
 
+<a class="skip" href="#main">${c.skipLabel || "Skip to content"}</a>
 <header class="dochead">
   <div class="wrap-wide">
     <span><strong>${c.brand.headerName}</strong> · escapechatcontrol.com</span>
@@ -143,7 +144,7 @@ ${renderJsonLd(locale, c)}
   </div>
 </header>
 
-<main>
+<main id="main">
 <div class="hero"><div class="wrap-wide">
   <p class="eyebrow">${c.hero.eyebrow}</p>
   <h1>${c.jsonld.articleHeadline}</h1>
